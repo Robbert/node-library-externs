@@ -29,60 +29,63 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @interface
  */
-var vm = {};
+function Node_vm()
+{
+
+}
 
 /**
  * @constructor
  */
-vm.Context = function() {}; // Does not really exist
+Node_vm.prototype.Context = function() {}; // Does not really exist
 
 /**
  * @param {string} code
  * @param {string=} filename
  */
-vm.runInThisContext = function(code, filename) {};
+Node_vm.prototype.runInThisContext = function(code, filename) {};
 
 /**
  * @param {string} code
  * @param {Object.<string,*>=} sandbox
  * @param {string=} filename
  */
-vm.runInNewContext = function(code, sandbox, filename) {};
+Node_vm.prototype.runInNewContext = function(code, sandbox, filename) {};
 
 /**
  * @param {string} code
- * @param {vm.Context} context
+ * @param {Node_vm.prototype.Context} context
  * @param {string=} filename
  */
-vm.runInContext = function(code, context, filename) {};
+Node_vm.prototype.runInContext = function(code, context, filename) {};
 
 /**
  * @param {Object.<string,*>=} initSandbox
- * @return {vm.Context}
+ * @return {Node_vm.prototype.Context}
  * @nosideeffects
  */
-vm.createContext = function(initSandbox) {};
+Node_vm.prototype.createContext = function(initSandbox) {};
 
 /**
  * @constructor
  */
-vm.Script = function() {};
+Node_vm.prototype.Script = function() {};
 
 /**
  * @param {string} code
  * @param {string=} filename
- * @return {vm.Script}
+ * @return {Node_vm.prototype.Script}
  * @nosideeffects
  */
-vm.createScript = function(code, filename) {};
+Node_vm.prototype.createScript = function(code, filename) {};
 
 /**
  */
-vm.Script.prototype.runInThisContext = function() {};
+Node_vm.prototype.Script.prototype.runInThisContext = function() {};
 
 /**
  * @param {Object.<string,*>=} sandbox
  */
-vm.Script.prototype.runInNewContext = function(sandbox) {};
+Node_vm.prototype.Script.prototype.runInNewContext = function(sandbox) {};

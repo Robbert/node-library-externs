@@ -21,149 +21,155 @@
  * @author Daniel Wirtz <dcode@dcode.io>
  */
 
-/**
- * @constructor
- * @extends events.EventEmitter
- */
-var process = function() {};
+/** @type {Node_process} */
+var process;
 
 /**
- * @type {stream.ReadableStream}
+ * @interface
+ * @extends {Node_events.EventEmitter}
  */
-process.stdin;
+function Node_process()
+{
+
+}
 
 /**
- * @type {stream.WritableStream}
+ * @type {Node_stream.ReadableStream}
  */
-process.stdout;
+Node_process.stdin;
 
 /**
- * @type {stream.WritableStream}
+ * @type {Node_stream.WritableStream}
  */
-process.stderr;
+Node_process.stdout;
+
+/**
+ * @type {Node_stream.WritableStream}
+ */
+Node_process.stderr;
 
 /**
  * @type {Array.<string>}
  */
-process.argv;
+Node_process.argv;
 
 /**
  * @type {string}
  */
-process.execPath;
+Node_process.execPath;
 
 /**
  */
-process.abort = function() {};
+Node_process.abort = function() {};
 
 /**
  * @param {string} directory
  */
-process.chdir = function(directory) {};
+Node_process.chdir = function(directory) {};
 
 /**
  * @return {string}
  * @nosideeffects
  */
-process.cwd = function() {};
+Node_process.cwd = function() {};
 
 /**
  * @type {Object.<string,string>}
  */
-process.env;
+Node_process.env;
 
 /**
  * @param {number=} code
  */
-process.exit = function(code) {};
+Node_process.exit = function(code) {};
 
 /**
  * @return {number}
  * @nosideeffects
  */
-process.getgid = function() {};
+Node_process.getgid = function() {};
 
 /**
  * @param {number} id
  */
-process.setgid = function(id) {};
+Node_process.setgid = function(id) {};
 
 /**
  * @return {number}
  * @nosideeffects
  */
-process.getuid = function() {};
+Node_process.getuid = function() {};
 
 /**
  * @param {number} id
  */
-process.setuid = function(id) {};
+Node_process.setuid = function(id) {};
 
 /**
  * @type {!string}
  */
-process.version;
+Node_process.version;
 
 /**
  * @type {Object.<string,string>}
  */
-process.versions;
+Node_process.versions;
 
 /**
  * @type {Object.<string,*>}
  */
-process.config;
+Node_process.config;
 
 /**
  * @param {number} pid
  * @param {string=} signal
  */
-process.kill = function(pid, signal) {};
+Node_process.kill = function(pid, signal) {};
 
 /**
  * @type {number}
  */
-process.pid;
+Node_process.pid;
 
 /**
  * @type {string}
  */
-process.title;
+Node_process.title;
 
 /**
  * @type {string}
  */
-process.arch;
+Node_process.arch;
 
 /**
  * @type {string}
  */
-process.platform;
+Node_process.platform;
 
 /**
  * @return {Object.<string,number>}
  * @nosideeffects
  */
-process.memoryUsage = function() {};
+Node_process.memoryUsage = function() {};
 
 /**
  * @param {!function()} callback
  */
-process.nextTick = function(callback) {};
+Node_process.nextTick = function(callback) {};
 
 /**
  * @param {number=} mask
  */
-process.umask = function(mask) {};
+Node_process.umask = function(mask) {};
 
 /**
  * @return {number}
  * @nosideeffects
  */
-process.uptime = function() {};
+Node_process.uptime = function() {};
 
 /**
  * @return {number}
  * @nosideeffects
  */
-process.hrtime = function() {};
+Node_process.hrtime = function() {};

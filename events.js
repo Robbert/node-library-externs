@@ -29,76 +29,79 @@ END_NODE_INCLUDE
  */
 
 /**
- * @type {Object.<string,*>}
+ * @interface
  */
-var events = {};
+function Node_events()
+{
+
+}
 
 /**
- * @constructor
+ * @interface
  */
-events.EventEmitter = function() {};
-
-/**
- * @param {string} event
- * @param {function(...)} listener
- * @return {events.EventEmitter}
- */
-events.EventEmitter.prototype.addListener = function(event, listener) {};
+Node_events.EventEmitter = function() {};
 
 /**
  * @param {string} event
  * @param {function(...)} listener
- * @return {events.EventEmitter}
+ * @return {Node_events.EventEmitter}
  */
-events.EventEmitter.prototype.on = function(event, listener) {};
+Node_events.EventEmitter.prototype.addListener = function(event, listener) {};
 
 /**
  * @param {string} event
  * @param {function(...)} listener
- * @return {events.EventEmitter}
+ * @return {Node_events.EventEmitter}
  */
-events.EventEmitter.prototype.once = function(event, listener) {};
+Node_events.EventEmitter.prototype.on = function(event, listener) {};
 
 /**
  * @param {string} event
  * @param {function(...)} listener
- * @return {events.EventEmitter}
+ * @return {Node_events.EventEmitter}
  */
-events.EventEmitter.prototype.removeListener = function(event, listener) {};
+Node_events.EventEmitter.prototype.once = function(event, listener) {};
+
+/**
+ * @param {string} event
+ * @param {function(...)} listener
+ * @return {Node_events.EventEmitter}
+ */
+Node_events.EventEmitter.prototype.removeListener = function(event, listener) {};
 
 /**
  * @param {string=} event
- * @return {events.EventEmitter}
+ * @return {Node_events.EventEmitter}
  */
-events.EventEmitter.prototype.removeAllListeners = function(event) {};
+Node_events.EventEmitter.prototype.removeAllListeners = function(event) {};
 
 /**
  * @param {number} n
  */
-events.EventEmitter.prototype.setMaxListeners = function(n) {};
+Node_events.EventEmitter.prototype.setMaxListeners = function(n) {};
 
 /**
  * @param {string} event
  * @return {Array.<function(...)>}
  */
-events.EventEmitter.prototype.listeners = function(event) {};
+Node_events.EventEmitter.prototype.listeners = function(event) {};
 
 /**
  * @param {string} event
  * @param {...*} var_args
  * @return {boolean}
  */
-events.EventEmitter.prototype.emit = function(event, var_args) {};
+Node_events.EventEmitter.prototype.emit = function(event, var_args) {};
 
 // Undocumented
 
 /**
  * @type {boolean}
  */
-events.usingDomains;
+Node_events.usingDomains;
 
 /**
- * @param {events.EventEmitter} emitter
+ * @param {Node_events.EventEmitter} emitter
  * @param {string} type
  */
-events.EventEmitter.listenerCount = function(emitter, type) {};
+Node_events.EventEmitter.listenerCount = function(emitter, type) {};

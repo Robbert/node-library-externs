@@ -15,7 +15,7 @@
  */
 
 /**
- * @fileoverview Definitions for node's core.
+ * @fileoverview Definitions for node's core. Depends on the buffer module.
  * @see http://nodejs.org/api/globals.html
  * @see http://nodejs.org/api/modules.html
  * @externs
@@ -104,6 +104,6 @@ module.children;
 var global = {};
 
 /**
- * @type {buffer.Buffer}
+ * @type {Node_buffer.Buffer}
  */
 var Buffer;

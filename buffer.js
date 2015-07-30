@@ -29,29 +29,32 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @interface
  */
-var buffer = {};
+function Node_buffer()
+{
+
+}
 
 /**
  * @param {...*} var_args
  * @constructor
  * @nosideeffects
  */
-buffer.Buffer = function(var_args) {};
+Node_buffer.Buffer = function(var_args) {};
 
 /**
  * @param {string} encoding
  * @return {boolean}
  */
-buffer.Buffer.isEncoding = function(encoding) {};
+Node_buffer.Buffer.isEncoding = function(encoding) {};
 
 /**
  * @param {*} obj
  * @return {boolean}
  * @nosideeffects
  */
-buffer.Buffer.isBuffer = function(obj) {};
+Node_buffer.Buffer.isBuffer = function(obj) {};
 
 /**
  * @param {string} string
@@ -59,27 +62,27 @@ buffer.Buffer.isBuffer = function(obj) {};
  * @return {number}
  * @nosideeffects
  */
-buffer.Buffer.byteLength = function(string, encoding) {};
+Node_buffer.Buffer.byteLength = function(string, encoding) {};
 
 /**
- * @param {Array.<buffer.Buffer>} list
+ * @param {Array.<Node_buffer.Buffer>} list
  * @param {number=} totalLength
- * @return {buffer.Buffer}
+ * @return {Node_buffer.Buffer}
  * @nosideeffects
  */
-buffer.Buffer.concat = function(list, totalLength) {};
+Node_buffer.Buffer.concat = function(list, totalLength) {};
 
 /**
  * @param {number} offset
  * @return {*}
  */
-buffer.Buffer.prototype.get = function(offset) {};
+Node_buffer.Buffer.prototype.get = function(offset) {};
 
 /**
  * @param {number} offset
  * @param {*} v
  */
-buffer.Buffer.prototype.set = function(offset, v) {};
+Node_buffer.Buffer.prototype.set = function(offset, v) {};
 
 /**
  * @param {string} string
@@ -88,140 +91,132 @@ buffer.Buffer.prototype.set = function(offset, v) {};
  * @param {number|string=} encoding
  * @return {*}
  */
-buffer.Buffer.prototype.write = function(string, offset, length, encoding) {};
+Node_buffer.Buffer.prototype.write = function(string, offset, length, encoding) {};
 
 /**
  * @return {Array}
  */
-buffer.Buffer.prototype.toJSON = function() {};
+Node_buffer.Buffer.prototype.toJSON = function() {};
 
 /**
  * @type {number}
  */
-buffer.Buffer.prototype.length;
+Node_buffer.Buffer.prototype.length;
 
 /**
- * @param {buffer.Buffer} targetBuffer
+ * @param {Node_buffer.Buffer} targetBuffer
  * @param {number=} targetStart
  * @param {number=} sourceStart
  * @param {number=} sourceEnd
- * @return {buffer.Buffer}
+ * @return {Node_buffer.Buffer}
  */
-buffer.Buffer.prototype.copy = function(targetBuffer, targetStart, sourceStart, sourceEnd){};
+Node_buffer.Buffer.prototype.copy = function(targetBuffer, targetStart, sourceStart, sourceEnd){};
 
 /**
  * @param {number=} start
  * @param {number=} end
- * @return {buffer.Buffer}
+ * @return {Node_buffer.Buffer}
  * @nosideeffects
  */
-buffer.Buffer.prototype.slice = function(start, end) {};
+Node_buffer.Buffer.prototype.slice = function(start, end) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readUInt8 = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readUInt8 = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readUInt16LE = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readUInt16LE = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readUInt16BE = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readUInt16BE = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readUInt32LE = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readUInt32LE = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readUInt32BE = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readUInt32BE = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readInt8 = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readInt8 = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readInt16LE = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readInt16LE = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readInt16BE = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readInt16BE = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readInt32LE = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readInt32LE = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readInt32BE = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readInt32BE = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readFloatLE = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readFloatLE = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readFloatBE = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readFloatBE = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readDoubleLE = function(offset, noAssert) {};
+Node_buffer.Buffer.prototype.readDoubleLE = function(offset, noAssert) {};
 
 /**
  * @param {number} offset
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.readDoubleBE = function(offset, noAssert) {};
-
-/**
- * @param {number} value
- * @param {number} offset
- * @param {boolean=} noAssert
- * @return {number}
- */
-buffer.Buffer.prototype.writeUInt8 = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.readDoubleBE = function(offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -229,7 +224,7 @@ buffer.Buffer.prototype.writeUInt8 = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeUInt16LE = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeUInt8 = function(value, offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -237,7 +232,7 @@ buffer.Buffer.prototype.writeUInt16LE = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeUInt16BE = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeUInt16LE = function(value, offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -245,7 +240,7 @@ buffer.Buffer.prototype.writeUInt16BE = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeUInt32LE = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeUInt16BE = function(value, offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -253,7 +248,7 @@ buffer.Buffer.prototype.writeUInt32LE = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeUInt32BE = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeUInt32LE = function(value, offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -261,7 +256,7 @@ buffer.Buffer.prototype.writeUInt32BE = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeInt8 = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeUInt32BE = function(value, offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -269,7 +264,7 @@ buffer.Buffer.prototype.writeInt8 = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeInt16LE = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeInt8 = function(value, offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -277,7 +272,7 @@ buffer.Buffer.prototype.writeInt16LE = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeInt16BE = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeInt16LE = function(value, offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -285,7 +280,7 @@ buffer.Buffer.prototype.writeInt16BE = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeInt32LE = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeInt16BE = function(value, offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -293,7 +288,7 @@ buffer.Buffer.prototype.writeInt32LE = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeInt32BE = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeInt32LE = function(value, offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -301,7 +296,7 @@ buffer.Buffer.prototype.writeInt32BE = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeFloatLE = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeInt32BE = function(value, offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -309,7 +304,7 @@ buffer.Buffer.prototype.writeFloatLE = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeFloatBE = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeFloatLE = function(value, offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -317,7 +312,7 @@ buffer.Buffer.prototype.writeFloatBE = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeDoubleLE = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeFloatBE = function(value, offset, noAssert) {};
 
 /**
  * @param {number} value
@@ -325,14 +320,22 @@ buffer.Buffer.prototype.writeDoubleLE = function(value, offset, noAssert) {};
  * @param {boolean=} noAssert
  * @return {number}
  */
-buffer.Buffer.prototype.writeDoubleBE = function(value, offset, noAssert) {};
+Node_buffer.Buffer.prototype.writeDoubleLE = function(value, offset, noAssert) {};
+
+/**
+ * @param {number} value
+ * @param {number} offset
+ * @param {boolean=} noAssert
+ * @return {number}
+ */
+Node_buffer.Buffer.prototype.writeDoubleBE = function(value, offset, noAssert) {};
 
 /**
  * @param {*} value
  * @param {number=} offset
  * @param {number=} end
  */
-buffer.Buffer.prototype.fill = function(value, offset, end) {};
+Node_buffer.Buffer.prototype.fill = function(value, offset, end) {};
 
 /**
  * @param {string=} encoding
@@ -340,17 +343,17 @@ buffer.Buffer.prototype.fill = function(value, offset, end) {};
  * @param {number=} end
  * @nosideeffects
  */
-buffer.Buffer.prototype.toString = function(encoding, start, end) {};
+Node_buffer.Buffer.prototype.toString = function(encoding, start, end) {};
 
 /**
  * @type {number}
  */
-buffer.Buffer.INSPECT_MAX_BYTES = 50;
+Node_buffer.Buffer.INSPECT_MAX_BYTES = 50;
 
 /**
  * @param {number} size
  */
-buffer.SlowBuffer = function(size) {};
+Node_buffer.SlowBuffer = function(size) {};
 
 /**
  * 
@@ -360,19 +363,19 @@ buffer.SlowBuffer = function(size) {};
  * @param {number|string=} encoding
  * @return {*}
  */
-buffer.SlowBuffer.prototype.write = function(string, offset, length, encoding) {};
+Node_buffer.SlowBuffer.prototype.write = function(string, offset, length, encoding) {};
 
 /**
  * @param {number} start
  * @param {number} end
- * @return {buffer.Buffer}
+ * @return {Node_buffer.Buffer}
  */
-buffer.SlowBuffer.prototype.slice = function(start, end) {};
+Node_buffer.SlowBuffer.prototype.slice = function(start, end) {};
 
 /**
  * @return {string}
  */
-buffer.SlowBuffer.prototype.toString = function() {};
+Node_buffer.SlowBuffer.prototype.toString = function() {};
 
 //
 // Legacy
@@ -381,41 +384,41 @@ buffer.SlowBuffer.prototype.toString = function() {};
 /**
  * @param {number=} start
  * @param {number=} end
- * @return {buffer.Buffer}
+ * @return {Node_buffer.Buffer}
  */
-buffer.Buffer.prototype.utf8Slice = function(start, end) {};
+Node_buffer.Buffer.prototype.utf8Slice = function(start, end) {};
 
 /**
  * @param {number=} start
  * @param {number=} end
- * @return {buffer.Buffer}
+ * @return {Node_buffer.Buffer}
  */
-buffer.Buffer.prototype.binarySlice = function(start, end) {};
+Node_buffer.Buffer.prototype.binarySlice = function(start, end) {};
 
 /**
  * @param {number=} start
  * @param {number=} end
- * @return {buffer.Buffer}
+ * @return {Node_buffer.Buffer}
  */
-buffer.Buffer.prototype.asciiSlice = function(start, end) {};
+Node_buffer.Buffer.prototype.asciiSlice = function(start, end) {};
 
 /**
  * @param {string} string
  * @param {number=} offset
- * @return {buffer.Buffer}
+ * @return {Node_buffer.Buffer}
  */
-buffer.Buffer.prototype.utf8Write = function(string, offset) {};
+Node_buffer.Buffer.prototype.utf8Write = function(string, offset) {};
 
 /**
  * @param {string} string
  * @param {number=} offset
- * @return {buffer.Buffer}
+ * @return {Node_buffer.Buffer}
  */
-buffer.Buffer.prototype.binaryWrite = function(string, offset) {};
+Node_buffer.Buffer.prototype.binaryWrite = function(string, offset) {};
 
 /**
  * @param {string} string
  * @param {number=} offset
- * @return {buffer.Buffer}
+ * @return {Node_buffer.Buffer}
  */
-buffer.Buffer.prototype.asciiWrite = function(string, offset) {};
+Node_buffer.Buffer.prototype.asciiWrite = function(string, offset) {};
