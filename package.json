@@ -11,13 +11,14 @@
         "url": "https://github.com/dcodeIO/node.js-closure-compiler-externs.git"
     },
     "devDependencies": {
-        "closurecompiler": ">=1.0.2"
+        "closurecompiler": ">=1.0.2",
+        "lodash": "~3.1.0"
     },
-    "license": "Apache License, Version 2.0",
+    "license": "Apache-2.0",
     "engines": {
         "node": ">=0.8"
     },
     "scripts": {
-        "test": "node tests/validate.js"
+        "test": "node tests/validate.js && node tests/compare.js"
     }
 }
