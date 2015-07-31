@@ -37,11 +37,6 @@ function Node_vm()
 }
 
 /**
- * @constructor
- */
-Node_vm.prototype.Context = function() {}; // Does not really exist
-
-/**
  * @param {string} code
  * @param {string=} filename
  */
@@ -56,20 +51,20 @@ Node_vm.prototype.runInNewContext = function(code, sandbox, filename) {};
 
 /**
  * @param {string} code
- * @param {Node_vm.prototype.Context} context
+ * @param {Node_vm_Context} context
  * @param {string=} filename
  */
 Node_vm.prototype.runInContext = function(code, context, filename) {};
 
 /**
  * @param {Object.<string,*>=} initSandbox
- * @return {Node_vm.prototype.Context}
+ * @return {Node_vm_Context}
  * @nosideeffects
  */
 Node_vm.prototype.createContext = function(initSandbox) {};
 
 /**
- * @constructor
+ * @interface
  */
 Node_vm.prototype.Script = function() {};
 
@@ -89,3 +84,9 @@ Node_vm.prototype.Script.prototype.runInThisContext = function() {};
  * @param {Object.<string,*>=} sandbox
  */
 Node_vm.prototype.Script.prototype.runInNewContext = function(sandbox) {};
+
+
+/**
+ * @interface
+ */
+function Node_vm_Context() {}; // Does not really exist

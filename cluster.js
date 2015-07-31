@@ -29,87 +29,91 @@
  */
 
 /**
- * @type events.EventEmitter
+ * @interface
+ * @extends {events.EventEmitter}
  */
-var cluster;
+function Node_cluster()
+{
+
+}
 
 /**
  * @typedef {{exec: string, args: Array.<string>, silent: boolean}}
  */
-cluster.Settings;
+Node_cluster.prototype.Settings;
 
 /**
  * @type {cluster.Settings}
  */
-cluster.settings;
+Node_cluster.prototype.settings;
 
 /**
  * @type {boolean}
  */
-cluster.isMaster;
+Node_cluster.prototype.isMaster;
 
 /**
  * @type {boolean}
  */
-cluster.isWorker;
+Node_cluster.prototype.isWorker;
 
 /**
  * @param {cluster.Settings=} settings
  */
-cluster.setupMaster = function(settings) {};
+Node_cluster.prototype.setupMaster = function(settings) {};
 
 /**
  * @param {Object.<string,*>} env
  * @return {cluster.Worker}
  */
-cluster.fork = function(env) {};
+Node_cluster.prototype.fork = function(env) {};
 
 /**
  * @param {function()=} callback
  */
-cluster.disconnect = function(callback) {};
+Node_cluster.prototype.disconnect = function(callback) {};
 
 /**
  * @type {?cluster.Worker}
  */
-cluster.worker;
+Node_cluster.prototype.worker;
 
 /**
  * @type {?Object.<string,cluster.Worker>}
  */
-cluster.workers;
+Node_cluster.prototype.workers;
 
 /**
  * @constructor
  * @extends events.EventEmitter
  */
-cluster.Worker = function() {};
+Node_cluster.prototype.Worker = function() {};
 
 /**
  * @type {string}
  */
-cluster.Worker.prototype.id;
+Node_cluster.prototype.Worker.prototype.id;
 
 /**
  * @type {child_process.ChildProcess}
  */
-cluster.Worker.prototype.process;
+Node_cluster.prototype.Worker.prototype.process;
 
 /**
  * @type {boolean}
  */
-cluster.Worker.prototype.suicide;
+Node_cluster.prototype.Worker.prototype.suicide;
 
 /**
  * @param {Object} message
  * @param {*=} sendHandle
  */
-cluster.Worker.prototype.send = function(message, sendHandle) {};
+Node_cluster.prototype.Worker.prototype.send = function(message, sendHandle) {};
 
 /**
  */
-cluster.Worker.prototype.destroy = function() {};
+Node_cluster.prototype.Worker.prototype.destroy = function() {};
 
 /**
  */
-cluster.Worker.prototype.disconnect = function() {};
+Node_cluster.prototype.Worker.prototype.disconnect = function() {};

@@ -29,114 +29,114 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @interface
  */
-var zlib = {};
+function Node_zlib() {}
 
 /**
  * @typedef {{chunkSize: ?number, windowBits: ?number, level: ?number, memLevel: ?number, strategy: ?number, dictionary: ?Object}}
  */
-zlib.Options;
+Node_zlib.Options;
 
 
 
 /**
  * @constructor
- * @extends stream.Transform
+ * @extends {stream.Transform}
  */
-zlib.Zlib = function() {};
+Node_zlib.prototype.Zlib = function Node_zlib_Zlib() {};
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @constructor
- * @extends zlib.Zlib
+ * @extends {Node_zlib_Zlib}
  */
-zlib.Gzip = function(options) {};
+Node_zlib.prototype.Gzip = function Node_zlib_Gzip(options) {};
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @constructor
- * @extends zlib.Zlib
+ * @extends {Node_zlib_Zlib}
  */
-zlib.Gunzip = function(options) {};
+Node_zlib.prototype.Gunzip = function Node_zlib_Gunzip(options) {};
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @constructor
- * @extends zlib.Zlib
+ * @extends {Node_zlib_Zlib}
  */
-zlib.Deflate = function(options) {};
+Node_zlib.prototype.Deflate = function Node_zlib_Deflate(options) {};
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @constructor
- * @extends zlib.Zlib
+ * @extends {Node_zlib_Zlib}
  */
-zlib.Inflate = function(options) {};
+Node_zlib.prototype.Inflate = function Node_zlib_Inflate(options) {};
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @constructor
- * @extends zlib.Zlib
+ * @extends {Node_zlib_Zlib}
  */
-zlib.DeflateRaw = function(options) {};
+Node_zlib.prototype.DeflateRaw = function Node_zlib_DeflateRaw(options) {};
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @constructor
- * @extends zlib.Zlib
+ * @extends {Node_zlib_Zlib}
  */
-zlib.InflateRaw = function(options) {};
+Node_zlib.prototype.InflateRaw = function Node_zlib_InflateRaw(options) {};
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @constructor
- * @extends zlib.Zlib
+ * @extends {Node_zlib_Zlib}
  */
-zlib.Unzip = function(options) {};
+Node_zlib.prototype.Unzip = function Node_zlib_Unzip(options) {};
 
 
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @return {zlib.Gzip}
  */
-zlib.createGzip = function(options) {};
+Node_zlib.prototype.createGzip = function(options) {};
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @return {zlib.Gunzip}
  */
-zlib.createGunzip = function(options) {};
+Node_zlib.prototype.createGunzip = function(options) {};
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @return {zlib.Deflate}
  */
-zlib.createDeflate = function(options) {};
+Node_zlib.prototype.createDeflate = function(options) {};
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @return {zlib.Inflate}
  */
-zlib.createInflate = function(options) {};
+Node_zlib.prototype.createInflate = function(options) {};
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @return {zlib.DeflateRaw}
  */
-zlib.createDeflateRaw = function(options) {};
+Node_zlib.prototype.createDeflateRaw = function(options) {};
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @return {zlib.InflateRaw}
  */
-zlib.createInflateRaw = function(options) {};
+Node_zlib.prototype.createInflateRaw = function(options) {};
 
 /**
- * @param {zlib.Options} options
+ * @param {Node_zlib.Options} options
  * @return {zlib.Unzip}
  */
-zlib.createUnzip = function(options) {};
+Node_zlib.prototype.createUnzip = function(options) {};
 
 
 
@@ -144,240 +144,147 @@ zlib.createUnzip = function(options) {};
  * @param {string|buffer.Buffer} buf
  * @param {function(...)} callback
  */
-zlib.deflate = function(buf, callback) {};
+Node_zlib.prototype.deflate = function(buf, callback) {};
 
 /**
  * @param {string|buffer.Buffer} buf
  * @param {function(...)} callback
  */
-zlib.deflateRaw = function(buf, callback) {};
+Node_zlib.prototype.deflateRaw = function(buf, callback) {};
 
 /**
  * @param {string|buffer.Buffer} buf
  * @param {function(...)} callback
  */
-zlib.gzip = function(buf, callback) {};
+Node_zlib.prototype.gzip = function(buf, callback) {};
 
 /**
  * @param {string|buffer.Buffer} buf
  * @param {function(...)} callback
  */
-zlib.gunzip = function(buf, callback) {};
+Node_zlib.prototype.gunzip = function(buf, callback) {};
 
 /**
  * @param {string|buffer.Buffer} buf
  * @param {function(...)} callback
  */
-zlib.inflate = function(buf, callback) {};
+Node_zlib.prototype.inflate = function(buf, callback) {};
 
 /**
  * @param {string|buffer.Buffer} buf
  * @param {function(...)} callback
  */
-zlib.inflateRaw = function(buf, callback) {};
+Node_zlib.prototype.inflateRaw = function(buf, callback) {};
 
 /**
  * @param {string|buffer.Buffer} buf
  * @param {function(...)} callback
  */
-zlib.unzip = function(buf, callback) {};
+Node_zlib.prototype.unzip = function(buf, callback) {};
 
 
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_NO_FLUSH = 0;
+/** @const {number} */
+Node_zlib.prototype.Z_NO_FLUSH = 0;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_PARTIAL_FLUSH = 1;
+/** @const {number} */
+Node_zlib.prototype.Z_PARTIAL_FLUSH = 1;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_SYNC_FLUSH = 2;
+/** @const {number} */
+Node_zlib.prototype.Z_SYNC_FLUSH = 2;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_FULL_FLUSH = 3;
+/** @const {number} */
+Node_zlib.prototype.Z_FULL_FLUSH = 3;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_FINISH = 4;
+/** @const {number} */
+Node_zlib.prototype.Z_FINISH = 4;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_BLOCK = 5;
+/** @const {number} */
+Node_zlib.prototype.Z_BLOCK = 5;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_TREES = 6;
+/** @const {number} */
+Node_zlib.prototype.Z_TREES = 6;
 
 
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_OK = 0;
+/** @const {number} */
+Node_zlib.prototype.Z_OK = 0;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_STREAM_END = 1;
+/** @const {number} */
+Node_zlib.prototype.Z_STREAM_END = 1;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_NEED_DICT = 2;
+/** @const {number} */
+Node_zlib.prototype.Z_NEED_DICT = 2;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_ERRNO = -1;
+/** @const {number} */
+Node_zlib.prototype.Z_ERRNO = -1;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_STREAM_ERROR = -2;
+/** @const {number} */
+Node_zlib.prototype.Z_STREAM_ERROR = -2;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_DATA_ERROR = -3;
+/** @const {number} */
+Node_zlib.prototype.Z_DATA_ERROR = -3;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_MEM_ERROR = -4;
+/** @const {number} */
+Node_zlib.prototype.Z_MEM_ERROR = -4;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_BUF_ERROR = -5;
+/** @const {number} */
+Node_zlib.prototype.Z_BUF_ERROR = -5;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_VERSION_ERROR = -6;
+/** @const {number} */
+Node_zlib.prototype.Z_VERSION_ERROR = -6;
 
 
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_NO_COMPRESSION = 0;
+/** @const {number} */
+Node_zlib.prototype.Z_NO_COMPRESSION = 0;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_BEST_SPEED = 1;
+/** @const {number} */
+Node_zlib.prototype.Z_BEST_SPEED = 1;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_BEST_COMPRESSION = 9;
+/** @const {number} */
+Node_zlib.prototype.Z_BEST_COMPRESSION = 9;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_DEFAULT_COMPRESSION = -1;
+/** @const {number} */
+Node_zlib.prototype.Z_DEFAULT_COMPRESSION = -1;
 
 
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_FILTERED = 1;
+/** @const {number} */
+Node_zlib.prototype.Z_FILTERED = 1;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_HUFFMAN_ONLY = 2;
+/** @const {number} */
+Node_zlib.prototype.Z_HUFFMAN_ONLY = 2;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_RLE = 3;
+/** @const {number} */
+Node_zlib.prototype.Z_RLE = 3;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_FIXED = 4;
+/** @const {number} */
+Node_zlib.prototype.Z_FIXED = 4;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_DEFAULT_STRATEGY = 0;
+/** @const {number} */
+Node_zlib.prototype.Z_DEFAULT_STRATEGY = 0;
 
 
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_BINARY = 0;
+/** @const {number} */
+Node_zlib.prototype.Z_BINARY = 0;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_TEXT = 1;
+/** @const {number} */
+Node_zlib.prototype.Z_TEXT = 1;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_ASCII = 1;
+/** @const {number} */
+Node_zlib.prototype.Z_ASCII = 1;
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_UNKNOWN = 2;
+/** @const {number} */
+Node_zlib.prototype.Z_UNKNOWN = 2;
 
 
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_DEFLATED = 8;
+/** @const {number} */
+Node_zlib.prototype.Z_DEFLATED = 8;
 
 
 
-/**
- * @type {number}
- * @const
- */
-zlib.Z_NULL = 0;
+/** @const {number} */
+Node_zlib.prototype.Z_NULL = 0;

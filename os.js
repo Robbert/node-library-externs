@@ -26,68 +26,74 @@
  var os = require('os');
  END_NODE_INCLUDE
  */
-    
-var os = {};
+
+/**
+ * @interface
+ */
+function Node_os()
+{
+
+}
 
 /**
  * @return {string}
  * @nosideeffects
  */
-os.tmdDir = function() {};
+Node_os.prototype.tmdDir = function() {};
 
 /**
  * @return {string}
  * @nosideeffects
  */
-os.hostname = function() {};
+Node_os.prototype.hostname = function() {};
 
 /**
  * @return {string}
  * @nosideeffects
  */
-os.type = function() {};
+Node_os.prototype.type = function() {};
 
 /**
  * @return {string}
  * @nosideeffects
  */
-os.platform = function() {};
+Node_os.prototype.platform = function() {};
 
 /**
  * @return {string}
  * @nosideeffects
  */
-os.arch = function() {};
+Node_os.prototype.arch = function() {};
 
 /**
  * @return {string}
  * @nosideeffects
  */
-os.release = function() {};
+Node_os.prototype.release = function() {};
 
 /**
  * @return {number}
  * @nosideeffects
  */
-os.uptime = function() {};
+Node_os.prototype.uptime = function() {};
 
 /**
  * @return {Array.<number>}
  * @nosideeffects
  */
-os.loadavg = function() {};
+Node_os.prototype.loadavg = function() {};
 
 /**
  * @return {number}
  * @nosideeffects
  */
-os.totalmem = function() {};
+Node_os.prototype.totalmem = function() {};
 
 /**
  * @return {number}
  * @nosideeffects
  */
-os.freemem = function() {};
+Node_os.prototype.freemem = function() {};
 
 /**
  * @typedef {{model: string, speed: number, times: {user: number, nice: number, sys: number, idle: number, irg: number}}}
@@ -98,7 +104,7 @@ var osCpusInfo;
  * @return {Array.<osCpusInfo>}
  * @nosideeffects
  */
-os.cpus = function() {};
+Node_os.prototype.cpus = function() {};
 
 /**
  * @typedef {{address: string, family: string, internal: boolean}}
@@ -109,9 +115,9 @@ var osNetworkInterfacesInfo;
  * @return {Object.<string,osNetworkInterfacesInfo>}
  * @nosideeffects
  */
-os.networkInterfaces = function() {};
+Node_os.prototype.networkInterfaces = function() {};
 
 /**
  * @type {string}
  */
-os.EOL;
+Node_os.prototype.EOL;

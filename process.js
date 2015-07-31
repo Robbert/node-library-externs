@@ -36,140 +36,140 @@ function Node_process()
 /**
  * @type {Node_stream.ReadableStream}
  */
-Node_process.stdin;
+Node_process.prototype.stdin;
 
 /**
  * @type {Node_stream.WritableStream}
  */
-Node_process.stdout;
+Node_process.prototype.stdout;
 
 /**
  * @type {Node_stream.WritableStream}
  */
-Node_process.stderr;
+Node_process.prototype.stderr;
 
 /**
  * @type {Array.<string>}
  */
-Node_process.argv;
+Node_process.prototype.argv;
 
 /**
  * @type {string}
  */
-Node_process.execPath;
+Node_process.prototype.execPath;
 
 /**
  */
-Node_process.abort = function() {};
+Node_process.prototype.abort = function() {};
 
 /**
  * @param {string} directory
  */
-Node_process.chdir = function(directory) {};
+Node_process.prototype.chdir = function(directory) {};
 
 /**
  * @return {string}
  * @nosideeffects
  */
-Node_process.cwd = function() {};
+Node_process.prototype.cwd = function() {};
 
 /**
  * @type {Object.<string,string>}
  */
-Node_process.env;
+Node_process.prototype.env;
 
 /**
  * @param {number=} code
  */
-Node_process.exit = function(code) {};
+Node_process.prototype.exit = function(code) {};
 
 /**
  * @return {number}
  * @nosideeffects
  */
-Node_process.getgid = function() {};
+Node_process.prototype.getgid = function() {};
 
 /**
  * @param {number} id
  */
-Node_process.setgid = function(id) {};
+Node_process.prototype.setgid = function(id) {};
 
 /**
  * @return {number}
  * @nosideeffects
  */
-Node_process.getuid = function() {};
+Node_process.prototype.getuid = function() {};
 
 /**
  * @param {number} id
  */
-Node_process.setuid = function(id) {};
+Node_process.prototype.setuid = function(id) {};
 
 /**
  * @type {!string}
  */
-Node_process.version;
+Node_process.prototype.version;
 
 /**
  * @type {Object.<string,string>}
  */
-Node_process.versions;
+Node_process.prototype.versions;
 
 /**
  * @type {Object.<string,*>}
  */
-Node_process.config;
+Node_process.prototype.config;
 
 /**
  * @param {number} pid
  * @param {string=} signal
  */
-Node_process.kill = function(pid, signal) {};
+Node_process.prototype.kill = function(pid, signal) {};
 
 /**
  * @type {number}
  */
-Node_process.pid;
+Node_process.prototype.pid;
 
 /**
  * @type {string}
  */
-Node_process.title;
+Node_process.prototype.title;
 
 /**
  * @type {string}
  */
-Node_process.arch;
+Node_process.prototype.arch;
 
 /**
  * @type {string}
  */
-Node_process.platform;
+Node_process.prototype.platform;
 
 /**
  * @return {Object.<string,number>}
  * @nosideeffects
  */
-Node_process.memoryUsage = function() {};
+Node_process.prototype.memoryUsage = function() {};
 
 /**
  * @param {!function()} callback
  */
-Node_process.nextTick = function(callback) {};
+Node_process.prototype.nextTick = function(callback) {};
 
 /**
  * @param {number=} mask
  */
-Node_process.umask = function(mask) {};
+Node_process.prototype.umask = function(mask) {};
 
 /**
  * @return {number}
  * @nosideeffects
  */
-Node_process.uptime = function() {};
+Node_process.prototype.uptime = function() {};
 
 /**
  * @return {number}
  * @nosideeffects
  */
-Node_process.hrtime = function() {};
+Node_process.prototype.hrtime = function() {};
