@@ -27,215 +27,233 @@ var http = require('http');
 END_NODE_INCLUDE
  */
 
-var http = {};
-
 /**
- * @typedef {function(http.IncomingMessage, http.ServerResponse)}
- */
-http.requestListener;
-
-/**
- * @param {http.requestListener=} listener
- * @return {http.Server}
- */
-http.createServer = function(listener) {};
-
-/**
- * @param {http.requestListener=} listener  
  * @constructor
- * @extends events.EventEmitter
  */
-http.Server = function(listener) {};
+function Node_http(){};
+
+/**
+ * @typedef {function(Node_http_IncomingMessage, Node_http_ServerResponse)}
+ */
+Node_http.RequestListener;
+
+/**
+ * @param {Node_http.RequestListener=} listener
+ * @return {Node_http_Server}
+ */
+Node_http.prototype.createServer = function(listener) {};
+
+/** @type {function(new:Node_http_Server)} */
+Node_http.prototype.Server;
+
+/**
+ * @param {Node_http.RequestListener=} listener  
+ * @constructor
+ * @extends {Node_EventEmitter}
+ */
+function Node_http_Server(listener) {};
 
 /**
  * @param {(number|string)} portOrPath
  * @param {(string|Function)=} hostnameOrCallback
  * @param {Function=} callback
  */
-http.Server.prototype.listen = function(portOrPath, hostnameOrCallback, callback) {};
+Node_http_Server.prototype.listen = function(portOrPath, hostnameOrCallback, callback) {};
 
 /**
  */
-http.Server.prototype.close = function() {};
+Node_http_Server.prototype.close = function() {};
 
+
+/** @type {function(new:Node_http_IncomingMessage)} */
+Node_http.prototype.IncomingMessage;
 /**
  * @constructor
- * @extends stream.Readable
+ * @extends {Node_Readable}
  */
-http.IncomingMessage = function() {};
+function Node_http_IncomingMessage() {};
 
 /**
  * @type {?string}
  * */
-http.IncomingMessage.prototype.method;
+Node_http_IncomingMessage.prototype.method;
 
 /**
  * @type {?string}
  */
-http.IncomingMessage.prototype.url;
+Node_http_IncomingMessage.prototype.url;
 
 /**
  * @type {Object}
  * */
-http.IncomingMessage.prototype.headers;
+Node_http_IncomingMessage.prototype.headers;
 
 /**
  * @type {Object}
  * */
-http.IncomingMessage.prototype.trailers;
+Node_http_IncomingMessage.prototype.trailers;
 
 /**
  * @type {string}
  */
-http.IncomingMessage.prototype.httpVersion;
+Node_http_IncomingMessage.prototype.httpVersion;
 
 /**
  * @type {string}
  */
-http.IncomingMessage.prototype.httpVersionMajor;
+Node_http_IncomingMessage.prototype.httpVersionMajor;
 
 /**
  * @type {string}
  */
-http.IncomingMessage.prototype.httpVersionMinor;
+Node_http_IncomingMessage.prototype.httpVersionMinor;
 
 /**
  * @type {*}
  */
-http.IncomingMessage.prototype.connection;
+Node_http_IncomingMessage.prototype.connection;
 
 /**
  * @type {?number}
  */
-http.IncomingMessage.prototype.statusCode;
+Node_http_IncomingMessage.prototype.statusCode;
 
 /**
- * @type {net.Socket}
+ * @type {Node_Socket}
  */
-http.IncomingMessage.prototype.socket;
+Node_http_IncomingMessage.prototype.socket;
 
 /**
  * @param {number} msecs
  * @param {function()} callback
  */
-http.IncomingMessage.prototype.setTimeout = function(msecs, callback) {};
+Node_http_IncomingMessage.prototype.setTimeout = function(msecs, callback) {};
+
+/** @type {function(new:Node_http_ServerResponse)} */
+Node_http.prototype.ServerResponse;
 
 /**
  * @constructor
- * @extends events.EventEmitter
+ * @extends {Node_EventEmitter}
  * @private
  */
-http.ServerResponse = function() {};
+function Node_http_ServerResponse() {};
 
 /**
  */
-http.ServerResponse.prototype.writeContinue = function() {};
+Node_http_ServerResponse.prototype.writeContinue = function() {};
 
 /**
  * @param {number} statusCode
  * @param {*=} reasonPhrase
  * @param {*=} headers
  */
-http.ServerResponse.prototype.writeHead = function(statusCode, reasonPhrase, headers) {};
+Node_http_ServerResponse.prototype.writeHead = function(statusCode, reasonPhrase, headers) {};
 
 /**
  * @type {number}
  */
-http.ServerResponse.prototype.statusCode;
+Node_http_ServerResponse.prototype.statusCode;
 
 /**
  * @param {string} name
  * @param {string} value
  */
-http.ServerResponse.prototype.setHeader = function(name, value) {};
+Node_http_ServerResponse.prototype.setHeader = function(name, value) {};
 
 /**
  * @param {string} name
  * @return {string|undefined} value
  */
-http.ServerResponse.prototype.getHeader = function(name) {};
+Node_http_ServerResponse.prototype.getHeader = function(name) {};
 
 /**
  * @param {string} name
  */
-http.ServerResponse.prototype.removeHeader = function(name) {};
+Node_http_ServerResponse.prototype.removeHeader = function(name) {};
 
 /**
- * @param {string|Array|buffer.Buffer} chunk
+ * @param {string|Array|Node_Buffer} chunk
  * @param {string=} encoding
  */
-http.ServerResponse.prototype.write = function(chunk, encoding) {};
+Node_http_ServerResponse.prototype.write = function(chunk, encoding) {};
 
 /**
  * @param {Object} headers
  */
-http.ServerResponse.prototype.addTrailers = function(headers) {};
+Node_http_ServerResponse.prototype.addTrailers = function(headers) {};
 
 /**
- * @param {(string|Array|buffer.Buffer)=} data
+ * @param {(string|Array|Node_Buffer)=} data
  * @param {string=} encoding
  */
-http.ServerResponse.prototype.end = function(data, encoding) {};
+Node_http_ServerResponse.prototype.end = function(data, encoding) {};
+
+/** @type {function(new:Node_http_ClientRequest)} */
+Node_http.prototype.ClientRequest;
 
 /**
  * @constructor
- * @extends events.EventEmitter
+ * @extends {Node_EventEmitter}
  * @private
  */
-http.ClientRequest = function() {};
+function Node_http_ClientRequest() {};
 
 /**
- * @param {string|Array|buffer.Buffer} chunk
+ * @param {string|Array|Node_Buffer} chunk
  * @param {string=} encoding
  */
-http.ClientRequest.prototype.write = function(chunk, encoding) {};
+Node_http_ClientRequest.prototype.write = function(chunk, encoding) {};
 
 /**
- * @param {(string|Array|buffer.Buffer)=} data
+ * @param {(string|Array|Node_Buffer)=} data
  * @param {string=} encoding
  */
-http.ClientRequest.prototype.end = function(data, encoding) {};
+Node_http_ClientRequest.prototype.end = function(data, encoding) {};
 
 /**
  */
-http.ClientRequest.prototype.abort = function() {};
+Node_http_ClientRequest.prototype.abort = function() {};
 
 /**
  * @param {Object} options
- * @param {function(http.IncomingMessage)} callback
- * @return {http.ClientRequest}
+ * @param {function(Node_http_IncomingMessage)} callback
+ * @return {Node_http_ClientRequest}
  */
-http.request = function(options, callback) {};
+Node_http.prototype.request = function(options, callback) {};
 
 /**
  * @param {Object} options
- * @param {function(http.IncomingMessage)} callback
- * @return {http.ClientRequest}
+ * @param {function(Node_http_IncomingMessage)} callback
+ * @return {Node_http_ClientRequest}
  */
-http.get = function(options, callback) {};
+Node_http.prototype.get = function(options, callback) {};
+
+/** @type {function(new:Node_http_Agent)} */
+Node_http.prototype.Agent;
 
 /**
  * @constructor
- * @extends events.EventEmitter
+ * @extends {Node_EventEmitter}
  */
-http.Agent = function() {};
+function Node_http_Agent() {};
 
 /**
  * @type {number}
  */
-http.Agent.prototype.maxSockets;
+Node_http_Agent.prototype.maxSockets;
 
 /**
  * @type {number}
  */
-http.Agent.prototype.sockets;
+Node_http_Agent.prototype.sockets;
 
 /**
- * @type {Array.<http.ClientRequest>}
+ * @type {Array.<Node_http_ClientRequest>}
  */
-http.Agent.prototype.requests;
+Node_http_Agent.prototype.requests;
 
 /**
- * @type {http.Agent}
+ * @type {Node_http_Agent}
  */
-http.globalAgent;
+Node_http.prototype.globalAgent;

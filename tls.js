@@ -29,101 +29,104 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @constructor
  */
-var tls = {};
+function Node_tls(){};
 
 /**
- * @typedef {{pfx: (string|buffer.Buffer), key: (string|buffer.Buffer), passphrase: string, cert: (string|buffer.Buffer), ca: Array.<string|buffer.Buffer>, crl: (string|Array.<string>), ciphers: string, honorCipherOrder: boolean, requestCert: boolean, rejectUnauthorized: boolean, NPNProtocols: (Array|buffer.Buffer), SNICallback: function(string), sessionIdContext: string}}
+ * @typedef {{pfx: (string|Node_Buffer), key: (string|Node_Buffer), passphrase: string, cert: (string|Node_Buffer), ca: Array.<string|Node_Buffer>, crl: (string|Array.<string>), ciphers: string, honorCipherOrder: boolean, requestCert: boolean, rejectUnauthorized: boolean, NPNProtocols: (Array|Node_Buffer), SNICallback: function(string), sessionIdContext: string}}
  */
-tls.CreateOptions;
+Node_tls.CreateOptions;
 
 /**
  * 
- * @param {tls.CreateOptions} options
+ * @param {Node_tls.CreateOptions} options
  * @param {function(...)=} secureConnectionListener
- * @return {tls.Server}
+ * @return {Node_tls_Server}
  */
-tls.createServer = function(options, secureConnectionListener) {};
+Node_tls.prototype.createServer = function(options, secureConnectionListener) {};
 
 /**
- * @typedef {{host: string, port: number, socket: *, pfx: (string|buffer.Buffer), key: (string|buffer.Buffer), passphrase: string, cert: (string|buffer.Buffer), ca: Array.<string>, rejectUnauthorized: boolean, NPNProtocols: Array.<string|buffer.Buffer>, servername: string}}
+ * @typedef {{host: string, port: number, socket: *, pfx: (string|Node_Buffer), key: (string|Node_Buffer), passphrase: string, cert: (string|Node_Buffer), ca: Array.<string>, rejectUnauthorized: boolean, NPNProtocols: Array.<string|Node_Buffer>, servername: string}}
  */
-tls.ConnectOptions;
+Node_tls.ConnectOptions;
 
 /**
  * 
- * @param {number|tls.ConnectOptions} port
- * @param {(string|tls.ConnectOptions|function(...))=} host
- * @param {(tls.ConnectOptions|function(...))=} options
+ * @param {number|Node_tls.ConnectOptions} port
+ * @param {(string|Node_tls.ConnectOptions|function(...))=} host
+ * @param {(Node_tls.ConnectOptions|function(...))=} options
  * @param {function(...)=} callback
  */
-tls.connect = function(port, host, options, callback) {};
+Node_tls.prototype.connect = function(port, host, options, callback) {};
 
 /**
- * @param {crypto.Credentials=} credentials
+ * @param {Node_crypto.Credentials=} credentials
  * @param {boolean=} isServer
  * @param {boolean=} requestCert
  * @param {boolean=} rejectUnauthorized
- * @return {tls.SecurePair}
+ * @return {Node_SecurePair}
  */
-tls.createSecurePair = function(credentials, isServer, requestCert, rejectUnauthorized) {};
+Node_tls.prototype.createSecurePair = function(credentials, isServer, requestCert, rejectUnauthorized) {};
 
 /**
  * @constructor
- * @extends events.EventEmitter
+ * @extends {Node_EventEmitter}
  */
-tls.SecurePair = function() {};
+function Node_SecurePair() {};
+
+/** @type {function(new:Node_tls_Server)} */
+Node_tls.prototype.Server;
 
 /**
  * @constructor
- * @extends net.Server
+ * @extends {Node_Server}
  */
-tls.Server = function() {};
+function Node_tls_Server() {};
 
 /**
  * @param {string} hostname
- * @param {string|buffer.Buffer} credentials
+ * @param {string|Node_Buffer} credentials
  */
-tls.Server.prototype.addContext = function(hostname, credentials) {};
+Node_tls_Server.prototype.addContext = function(hostname, credentials) {};
 
 /**
  * @constructor
- * @extends stream.Duplex
+ * @extends {Node_Duplex}
  */
-tls.CleartextStream = function() {};
+function Node_CleartextStream() {};
 
 /**
  * @type {boolean}
  */
-tls.CleartextStream.prototype.authorized;
+Node_CleartextStream.prototype.authorized;
 
 /**
  * @type {?string}
  */
-tls.CleartextStream.prototype.authorizationError;
+Node_CleartextStream.prototype.authorizationError;
 
 /**
  * @return {Object.<string,(string|Object.<string,string>)>}
  */
-tls.CleartextStream.prototype.getPeerCertificate = function() {};
+Node_CleartextStream.prototype.getPeerCertificate = function() {};
 
 /**
  * @return {{name: string, version: string}}
  */
-tls.CleartextStream.prototype.getCipher = function() {};
+Node_CleartextStream.prototype.getCipher = function() {};
 
 /**
  * @return {{port: number, family: string, address: string}}
  */
-tls.CleartextStream.prototype.address = function() {};
+Node_CleartextStream.prototype.address = function() {};
 
 /**
  * @type {string}
  */
-tls.CleartextStream.prototype.remoteAddress;
+Node_CleartextStream.prototype.remoteAddress;
 
 /**
  * @type {number}
  */
-tls.CleartextStream.prototype.remotePort;
+Node_CleartextStream.prototype.remotePort;

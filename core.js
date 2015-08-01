@@ -23,7 +23,7 @@
  */
 
 /**
- * @param name
+ * @param {string} name
  * @return {*}
  */
 var require = function(name) {}
@@ -104,6 +104,6 @@ module.children;
 var global = {};
 
 /**
- * @type {Node_buffer.Buffer}
+ * @type {Node_Buffer}
  */
 var Buffer;

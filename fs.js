@@ -28,33 +28,36 @@
  END_NODE_INCLUDE
  */
 
-var fs = {};
+/**
+ * @constructor
+ */
+function Node_fs(){};
 
 /**
  * @param {string} oldPath
  * @param {string} newPath
  * @param {function(...)=} callback
  */
-fs.rename = function(oldPath, newPath, callback) {};
+Node_fs.prototype.rename = function(oldPath, newPath, callback) {};
 
 /**
  * @param {string} oldPath
  * @param {string} newPath
  */
-fs.renameSync = function(oldPath, newPath) {};
+Node_fs.prototype.renameSync = function(oldPath, newPath) {};
 
 /**
  * @param {*} fd
  * @param {number} len
  * @param {function(...)=} callback
  */
-fs.truncate = function(fd, len, callback) {};
+Node_fs.prototype.truncate = function(fd, len, callback) {};
 
 /**
  * @param {*} fd
  * @param {number} len
  */
-fs.truncateSync = function(fd, len) {};
+Node_fs.prototype.truncateSync = function(fd, len) {};
 
 /**
  * @param {string} path
@@ -62,14 +65,14 @@ fs.truncateSync = function(fd, len) {};
  * @param {number} gid
  * @param {function(...)=} callback
  */
-fs.chown = function(path, uid, gid, callback) {};
+Node_fs.prototype.chown = function(path, uid, gid, callback) {};
 
 /**
  * @param {string} path
  * @param {number} uid
  * @param {number} gid
  */
-fs.chownSync = function(path, uid, gid) {};
+Node_fs.prototype.chownSync = function(path, uid, gid) {};
 
 /**
  * @param {*} fd
@@ -77,14 +80,14 @@ fs.chownSync = function(path, uid, gid) {};
  * @param {number} gid
  * @param {function(...)=} callback
  */
-fs.fchown = function(fd, uid, gid, callback) {};
+Node_fs.prototype.fchown = function(fd, uid, gid, callback) {};
 
 /**
  * @param {*} fd
  * @param {number} uid
  * @param {number} gid
  */
-fs.fchownSync = function(fd, uid, gid) {};
+Node_fs.prototype.fchownSync = function(fd, uid, gid) {};
 
 /**
  * @param {string} path
@@ -92,105 +95,105 @@ fs.fchownSync = function(fd, uid, gid) {};
  * @param {number} gid
  * @param {function(...)=} callback
  */
-fs.lchown = function(path, uid, gid, callback) {};
+Node_fs.prototype.lchown = function(path, uid, gid, callback) {};
 
 /**
  * @param {string} path
  * @param {number} uid
  * @param {number} gid
  */
-fs.lchownSync = function(path, uid, gid) {};
+Node_fs.prototype.lchownSync = function(path, uid, gid) {};
 
 /**
  * @param {string} path
  * @param {number} mode
  * @param {function(...)=} callback
  */
-fs.chmod = function(path, mode, callback) {};
+Node_fs.prototype.chmod = function(path, mode, callback) {};
 
 /**
  * @param {string} path
  * @param {number} mode
  */
-fs.chmodSync = function(path, mode) {};
+Node_fs.prototype.chmodSync = function(path, mode) {};
 
 /**
  * @param {*} fd
  * @param {number} mode
  * @param {function(...)=} callback
  */
-fs.fchmod = function(fd, mode, callback) {};
+Node_fs.prototype.fchmod = function(fd, mode, callback) {};
 
 /**
  * @param {*} fd
  * @param {number} mode
  */
-fs.fchmodSync = function(fd, mode) {};
+Node_fs.prototype.fchmodSync = function(fd, mode) {};
 
 /**
  * @param {string} path
  * @param {number} mode
  * @param {function(...)=} callback
  */
-fs.lchmod = function(path, mode, callback) {};
+Node_fs.prototype.lchmod = function(path, mode, callback) {};
 
 /**
  * @param {string} path
  * @param {number} mode
  */
-fs.lchmodSync = function(path, mode) {};
+Node_fs.prototype.lchmodSync = function(path, mode) {};
 
 /**
  * @param {string} path
- * @param {function(string, fs.Stats)=} callback
+ * @param {function(string, Node_fs_Stats)=} callback
  */
-fs.stat = function(path, callback) {};
+Node_fs.prototype.stat = function(path, callback) {};
 
 /**
  * @param {string} path
- * @return {fs.Stats}
+ * @return {Node_fs_Stats}
  * @nosideeffects
  */
-fs.statSync = function(path) {}
+Node_fs.prototype.statSync = function(path) {}
 
 /**
  * @param {*} fd
- * @param {function(string, fs.Stats)=} callback
+ * @param {function(string, Node_fs_Stats)=} callback
  */
-fs.fstat = function(fd, callback) {};
+Node_fs.prototype.fstat = function(fd, callback) {};
 
 /**
  * @param {*} fd
- * @return {fs.Stats}
+ * @return {Node_fs_Stats}
  * @nosideeffects
  */
-fs.fstatSync = function(fd) {}
+Node_fs.prototype.fstatSync = function(fd) {}
 
 /**
  * @param {string} path
- * @param {function(string, fs.Stats)=} callback
+ * @param {function(string, Node_fs_Stats)=} callback
  */
-fs.lstat = function(path, callback) {};
+Node_fs.prototype.lstat = function(path, callback) {};
 
 /**
  * @param {string} path
- * @return {fs.Stats}
+ * @return {Node_fs_Stats}
  * @nosideeffects
  */
-fs.lstatSync = function(path) {}
+Node_fs.prototype.lstatSync = function(path) {}
 
 /**
  * @param {string} srcpath
  * @param {string} dstpath
  * @param {function(...)=} callback
  */
-fs.link = function(srcpath, dstpath, callback) {};
+Node_fs.prototype.link = function(srcpath, dstpath, callback) {};
 
 /**
  * @param {string} srcpath
  * @param {string} dstpath
  */
-fs.linkSync = function(srcpath, dstpath) {};
+Node_fs.prototype.linkSync = function(srcpath, dstpath) {};
 
 /**
  * @param {string} srcpath
@@ -198,34 +201,34 @@ fs.linkSync = function(srcpath, dstpath) {};
  * @param {string=} type
  * @param {function(...)=} callback
  */
-fs.symlink = function(srcpath, dstpath, type, callback) {};
+Node_fs.prototype.symlink = function(srcpath, dstpath, type, callback) {};
 
 /**
  * @param {string} srcpath
  * @param {string} dstpath
  * @param {string=} type
  */
-fs.symlinkSync = function(srcpath, dstpath, type) {};
+Node_fs.prototype.symlinkSync = function(srcpath, dstpath, type) {};
 
 /**
  * @param {string} path
  * @param {function(string, string)=} callback
  */
-fs.readlink = function(path, callback) {};
+Node_fs.prototype.readlink = function(path, callback) {};
 
 /**
  * @param {string} path
  * @return {string}
  * @nosideeffects
  */
-fs.readlinkSync = function(path) {};
+Node_fs.prototype.readlinkSync = function(path) {};
 
 /**
  * @param {string} path
  * @param {Object.<string,string>|function(string, string)=} cache
  * @param {function(string, string)=} callback
  */
-fs.realpath = function(path, cache, callback) {};
+Node_fs.prototype.realpath = function(path, cache, callback) {};
 
 /**
  * @param {string} path
@@ -233,66 +236,66 @@ fs.realpath = function(path, cache, callback) {};
  * @return {string}
  * @nosideeffects
  */
-fs.realpathSync = function(path, cache) {};
+Node_fs.prototype.realpathSync = function(path, cache) {};
 
 /**
  * @param {string} path
  * @param {function(...)=} callback
  */
-fs.unlink = function(path, callback) {};
+Node_fs.prototype.unlink = function(path, callback) {};
 
 /**
  * @param {string} path
  */
-fs.unlinkSync = function(path) {};
+Node_fs.prototype.unlinkSync = function(path) {};
 
 /**
  * @param {string} path
  * @param {function(...)=} callback
  */
-fs.rmdir = function(path, callback) {};
+Node_fs.prototype.rmdir = function(path, callback) {};
 
 /**
  * @param {string} path
  */
-fs.rmdirSync = function(path) {};
+Node_fs.prototype.rmdirSync = function(path) {};
 
 /**
  * @param {string} path
  * @param {number=} mode
  * @param {function(...)=} callback
  */
-fs.mkdir = function(path, mode, callback) {};
+Node_fs.prototype.mkdir = function(path, mode, callback) {};
 
 /**
  * @param {string} path
  * @param {number=} mode
  */
-fs.mkdirSync = function(path, mode) {};
+Node_fs.prototype.mkdirSync = function(path, mode) {};
 
 /**
  * @param {string} path
  * @param {function(string,Array.<string>)=} callback
  */
-fs.readdir = function(path, callback) {};
+Node_fs.prototype.readdir = function(path, callback) {};
 
 /**
  * @param {string} path
  * @return {Array.<string>}
  * @nosideeffects
  */
-fs.readdirSync = function(path) {};
+Node_fs.prototype.readdirSync = function(path) {};
 
 /**
  * @param {*} fd
  * @param {function(...)=} callback
  */
-fs.close = function(fd, callback) {};
+Node_fs.prototype.close = function(fd, callback) {};
 
 /**
  * @param {*} fd
  */
-fs.closeSync = function(fd) {};
+Node_fs.prototype.closeSync = function(fd) {};
 
 /**
  * @param {string} path
@@ -300,7 +303,7 @@ fs.closeSync = function(fd) {};
  * @param {number=} mode
  * @param {function(string, *)=} callback
  */
-fs.open = function(path, flags, mode, callback) {};
+Node_fs.prototype.open = function(path, flags, mode, callback) {};
 
 /**
  * @param {string} path
@@ -309,7 +312,7 @@ fs.open = function(path, flags, mode, callback) {};
  * @return {*}
  * @nosideeffects
  */
-fs.openSync = function(path, flags, mode) {};
+Node_fs.prototype.openSync = function(path, flags, mode) {};
 
 /**
  * @param {string} path
@@ -317,7 +320,7 @@ fs.openSync = function(path, flags, mode) {};
  * @param {number|Date} mtime
  * @param {function(...)=} callback
  */
-fs.utimes = function(path, atime, mtime, callback) {};
+Node_fs.prototype.utimes = function(path, atime, mtime, callback) {};
 
 /**
  * @param {string} path
@@ -325,7 +328,7 @@ fs.utimes = function(path, atime, mtime, callback) {};
  * @param {number|Date} mtime
  * @nosideeffects
  */
-fs.utimesSync = function(path, atime, mtime) {};
+Node_fs.prototype.utimesSync = function(path, atime, mtime) {};
 
 /**
  * @param {*} fd
@@ -333,7 +336,7 @@ fs.utimesSync = function(path, atime, mtime) {};
  * @param {number|Date} mtime
  * @param {function(...)=} callback
  */
-fs.futimes = function(fd, atime, mtime, callback) {};
+Node_fs.prototype.futimes = function(fd, atime, mtime, callback) {};
 
 /**
  * @param {*} fd
@@ -341,18 +344,18 @@ fs.futimes = function(fd, atime, mtime, callback) {};
  * @param {number|Date} mtime
  * @nosideeffects
  */
-fs.futimesSync = function(fd, atime, mtime) {};
+Node_fs.prototype.futimesSync = function(fd, atime, mtime) {};
 
 /**
  * @param {*} fd
  * @param {function(...)=} callback
  */
-fs.fsync = function(fd, callback) {};
+Node_fs.prototype.fsync = function(fd, callback) {};
 
 /**
  * @param {*} fd
  */
-fs.fsyncSync = function(fd) {};
+Node_fs.prototype.fsyncSync = function(fd) {};
 
 /**
  * @param {*} fd
@@ -362,7 +365,7 @@ fs.fsyncSync = function(fd) {};
  * @param {number} position
  * @param {function(string, number, *)=} callback
  */
-fs.write = function(fd, buffer, offset, length, position, callback) {};
+Node_fs.prototype.write = function(fd, buffer, offset, length, position, callback) {};
 
 /**
  * @param {*} fd
@@ -372,7 +375,7 @@ fs.write = function(fd, buffer, offset, length, position, callback) {};
  * @param {number} position
  * @return {number}
  */
-fs.writeSync = function(fd, buffer, offset, length, position) {};
+Node_fs.prototype.writeSync = function(fd, buffer, offset, length, position) {};
 
 /**
  * @param {*} fd
@@ -382,7 +385,7 @@ fs.writeSync = function(fd, buffer, offset, length, position) {};
  * @param {number} position
  * @param {function(string, number, *)=} callback
  */
-fs.read = function(fd, buffer, offset, length, position, callback) {};
+Node_fs.prototype.read = function(fd, buffer, offset, length, position, callback) {};
 
 /**
  * @param {*} fd
@@ -393,22 +396,22 @@ fs.read = function(fd, buffer, offset, length, position, callback) {};
  * @return {number}
  * @nosideeffects
  */
-fs.readSync = function(fd, buffer, offset, length, position) {};
+Node_fs.prototype.readSync = function(fd, buffer, offset, length, position) {};
 
 /**
  * @param {string} filename
- * @param {string|{encoding:(string|undefined),flag:(string|undefined)}|function(string, (string|buffer.Buffer))=} encodingOrOptions
- * @param {function(string, (string|buffer.Buffer))=} callback
+ * @param {string|{encoding:(string|undefined),flag:(string|undefined)}|function(string, (string|Node_Buffer))=} encodingOrOptions
+ * @param {function(string, (string|Node_Buffer))=} callback
  */
-fs.readFile = function(filename, encodingOrOptions, callback) {};
+Node_fs.prototype.readFile = function(filename, encodingOrOptions, callback) {};
 
 /**
  * @param {string} filename
  * @param {string|{encoding:(string|undefined),flag:(string|undefined)}=} encodingOrOptions
- * @return {string|buffer.Buffer}
+ * @return {string|Node_Buffer}
  * @nosideeffects
  */
-fs.readFileSync = function(filename, encodingOrOptions) {};
+Node_fs.prototype.readFileSync = function(filename, encodingOrOptions) {};
 
 /**
  * @param {string} filename
@@ -416,14 +419,14 @@ fs.readFileSync = function(filename, encodingOrOptions) {};
  * @param {string|{encoding:(string|undefined),mode:(number|undefined),flag:(string|undefined)}|function(string)=} encodingOrOptions
  * @param {function(string)=} callback
  */
-fs.writeFile = function(filename, data, encodingOrOptions, callback) {};
+Node_fs.prototype.writeFile = function(filename, data, encodingOrOptions, callback) {};
 
 /**
  * @param {string} filename
  * @param {*} data
  * @param {string|{encoding:(string|undefined),mode:(number|undefined),flag:(string|undefined)}|function(string)=} encodingOrOptions
  */
-fs.writeFileSync = function(filename, data, encodingOrOptions) {};
+Node_fs.prototype.writeFileSync = function(filename, data, encodingOrOptions) {};
 
 /**
  * @param {string} filename
@@ -431,195 +434,206 @@ fs.writeFileSync = function(filename, data, encodingOrOptions) {};
  * @param {string|function(string)=} encoding
  * @param {function(string)=} callback
  */
-fs.appendFile = function(filename, data, encoding, callback) {};
+Node_fs.prototype.appendFile = function(filename, data, encoding, callback) {};
 
 /**
  * @param {string} filename
  * @param {*} data
  * @param {string|function(string)=} encoding
  */
-fs.appendFileSync = function(filename, data, encoding) {};
+Node_fs.prototype.appendFileSync = function(filename, data, encoding) {};
 
 /**
  * @param {string} filename
  * @param {{persistent: boolean, interval: number}|function(*,*)=} options
  * @param {function(*,*)=} listener
  */
-fs.watchFile = function(filename, options, listener) {};
+Node_fs.prototype.watchFile = function(filename, options, listener) {};
 
 /**
  * @param {string} filename
  * @param {function(string, string)=} listener
  */
-fs.unwatchFile = function(filename, listener) {};
+Node_fs.prototype.unwatchFile = function(filename, listener) {};
 
 /**
+ * @suppress {checkTypes}
+ * @override Remember Object.prototype.watch?
  * 
  * @param {string} filename
  * @param {{persistent: boolean}|function(string, string)=} options
  * @param {function(string, string)=} listener
- * @return {fs.FSWatcher}
+ * @return {Node_FSWatcher}
  */
-fs.watch = function(filename, options, listener) {};
+Node_fs.prototype.watch = function(filename, options, listener) {};
 
 /**
  * @param {string} path
  * @param {function(boolean)} callback
  */
-fs.exists = function(path, callback) {};
+Node_fs.prototype.exists = function(path, callback) {};
 
 /**
  * @param {string} path
  * @nosideeffects
  */
-fs.existsSync = function(path) {};
+Node_fs.prototype.existsSync = function(path) {};
+
+/** @type {function(new:Node_fs_Stats)} */
+Node_fs.prototype.Stats;
 
 /**
  * @constructor
  */
-fs.Stats = function() {};
+function Node_fs_Stats() {};
 
 /**
  * @return {boolean}
  * @nosideeffects
  */
-fs.Stats.prototype.isFile = function() {};
+Node_fs_Stats.prototype.isFile = function() {};
 
 /**
  * @return {boolean}
  * @nosideeffects
  */
-fs.Stats.prototype.isDirectory = function() {};
+Node_fs_Stats.prototype.isDirectory = function() {};
 
 /**
  * @return {boolean}
  * @nosideeffects
  */
-fs.Stats.prototype.isBlockDevice = function() {};
+Node_fs_Stats.prototype.isBlockDevice = function() {};
 
 /**
  * @return {boolean}
  * @nosideeffects
  */
-fs.Stats.prototype.isCharacterDevice = function() {};
+Node_fs_Stats.prototype.isCharacterDevice = function() {};
 
 /**
  * @return {boolean}
  * @nosideeffects
  */
-fs.Stats.prototype.isSymbolicLink = function() {};
+Node_fs_Stats.prototype.isSymbolicLink = function() {};
 
 /**
  * @return {boolean}
  * @nosideeffects
  */
-fs.Stats.prototype.isFIFO = function() {};
+Node_fs_Stats.prototype.isFIFO = function() {};
 
 /**
  * @return {boolean}
  * @nosideeffects
  */
-fs.Stats.prototype.isSocket = function() {};
+Node_fs_Stats.prototype.isSocket = function() {};
 
 /**
  * @type {number}
  */
-fs.Stats.prototype.dev = 0;
+Node_fs_Stats.prototype.dev = 0;
 
 /**
  * @type {number}
  */
-fs.Stats.prototype.ino = 0;
+Node_fs_Stats.prototype.ino = 0;
 
 /**
  * @type {number}
  */
-fs.Stats.prototype.mode = 0;
+Node_fs_Stats.prototype.mode = 0;
 
 /**
  * @type {number}
  */
-fs.Stats.prototype.nlink = 0;
+Node_fs_Stats.prototype.nlink = 0;
 
 /**
  * @type {number}
  */
-fs.Stats.prototype.uid = 0;
+Node_fs_Stats.prototype.uid = 0;
 
 /**
  * @type {number}
  */
-fs.Stats.prototype.gid = 0;
+Node_fs_Stats.prototype.gid = 0;
 
 /**
  * @type {number}
  */
-fs.Stats.prototype.rdev = 0;
+Node_fs_Stats.prototype.rdev = 0;
 
 /**
  * @type {number}
  */
-fs.Stats.prototype.size = 0;
+Node_fs_Stats.prototype.size = 0;
 
 /**
  * @type {number}
  */
-fs.Stats.prototype.blkSize = 0;
+Node_fs_Stats.prototype.blkSize = 0;
 
 /**
  * @type {number}
  */
-fs.Stats.prototype.blocks = 0;
+Node_fs_Stats.prototype.blocks = 0;
 
 /**
  * @type {Date}
  */
-fs.Stats.prototype.atime;
+Node_fs_Stats.prototype.atime;
 
 /**
  * @type {Date}
  */
-fs.Stats.prototype.mtime;
+Node_fs_Stats.prototype.mtime;
 
 /**
  * @type {Date}
  */
-fs.Stats.prototype.ctime;
+Node_fs_Stats.prototype.ctime;
 
 /**
  * @param {string} path
  * @param {{flags: string, encoding: ?string, fd: *, mode: number, bufferSize: number}=} options
- * @return {fs.ReadStream}
+ * @return {Node_fs_ReadStream}
  * @nosideeffects
  */
-fs.createReadStream = function(path, options) {};
+Node_fs.prototype.createReadStream = function(path, options) {};
+
+/** @type {function(new:Node_fs_ReadStream)} */
+Node_fs.prototype.ReadStream;
 
 /**
  * @constructor
- * @extends stream.ReadableStream
+ * @extends {Node_ReadableStream}
  */
-fs.ReadStream = function() {};
+function Node_fs_ReadStream() {};
 
 /**
  * @param {string} path
  * @param {{flags: string, encoding: ?string, mode: number}=} options
- * @return {fs.WriteStream}
+ * @return {Node_fs_WriteStream}
  * @nosideeffects
  */
-fs.createWriteStream = function(path, options) {};
+Node_fs.prototype.createWriteStream = function(path, options) {};
+
+/** @type {function(new:Node_fs_WriteStream)} */
+Node_fs.prototype.WriteStream;
 
 /**
  * @constructor
- * @extends stream.WritableStream
+ * @extends {Node_WritableStream}
  */
-fs.WriteStream = function() {};
+function Node_fs_WriteStream() {};
 
 /**
  * @constructor
- * @extends events.EventEmitter
+ * @extends {Node_EventEmitter}
  */
-fs.FSWatcher = function() {};
+function Node_FSWatcher() {};
 
 /**
  */
-fs.FSWatcher.prototype.close = function() {};
+Node_FSWatcher.prototype.close = function() {};

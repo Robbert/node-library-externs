@@ -28,53 +28,56 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @constructor
  */
-var readline = {};
+function Node_readline(){};
 
 /**
- * @param {{input: stream.ReadableStream, output: stream.WritableStream, completer: function(string, function(*, Array)=), terminal: boolean}} options
- * @return {readline.Interface}
+ * @param {{input: Node_ReadableStream, output: Node_WritableStream, completer: function(string, function(*, Array)=), terminal: boolean}} options
+ * @return {Node_readline_Interface}
  */
-readline.createInterface = function(options) {};
+Node_readline.prototype.createInterface = function(options) {};
+
+/** @type {function(new:Node_readline_Interface)} */
+Node_readline.prototype.Interface;
 
 /**
  * @constructor
- * @extends events.EventEmitter
+ * @extends {Node_EventEmitter}
  */
-readline.Interface = function() {};
+function Node_readline_Interface() {};
 
 /**
  * @param {string} prompt
  * @param {number} length
  */
-readline.Interface.prototype.setPrompt = function(prompt, length) {};
+Node_readline.prototype.Interface.prototype.setPrompt = function(prompt, length) {};
 
 /**
  * @param {boolean=} preserveCursor
  */
-readline.Interface.prototype.prompt = function(preserveCursor) {};
+Node_readline.prototype.Interface.prototype.prompt = function(preserveCursor) {};
 
 /**
  * @param {string} query
  * @param {function(string)} callback
  */
-readline.Interface.prototype.question = function(query, callback) {};
+Node_readline.prototype.Interface.prototype.question = function(query, callback) {};
 
 /**
  */
-readline.Interface.prototype.pause = function() {};
+Node_readline.prototype.Interface.prototype.pause = function() {};
 
 /**
  */
-readline.Interface.prototype.resume = function() {};
+Node_readline.prototype.Interface.prototype.resume = function() {};
 
 /**
  */
-readline.Interface.prototype.close = function() {};
+Node_readline.prototype.Interface.prototype.close = function() {};
 
 /**
  * @param {string} data
  * @param {Object.<string,*>=} key
  */
-readline.Interface.prototype.write = function(data, key) {};
+Node_readline.prototype.Interface.prototype.write = function(data, key) {};

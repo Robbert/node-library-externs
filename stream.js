@@ -29,222 +29,245 @@
  */
 
 /**
- * @interface
+ * @constructor
  */
 function Node_stream()
 {
     //
 }
 
-/**
- * @interface
- * @param {Object=} options
- * @extends {Node_events.EventEmitter}
- */
-Node_stream.Stream = function(options) {};
+/** @type {function(new:Node_Stream, Object=)} */
+Node_stream.Stream;
 
 /**
- * @param {Node_stream.Writable} dest
+ * @constructor
+ * @param {Object=} options
+ * @extends {Node_EventEmitter}
+ */
+function Node_Stream(options) {};
+
+/**
+ * @param {Node_Writable} dest
  * @param {{end: boolean}=} pipeOpts
- * @return {Node_stream.Writable}
+ * @return {Node_Writable}
  */
 Node_stream.Stream.prototype.pipe = function(dest, pipeOpts) {};
 
+/** @type {function (new:Node_ReadableStream)} */
+Node_stream.ReadableStream;
+
 /**
- * @interface
- * @extends Node_stream.Readable
+ * @constructor
+ * @extends {Node_Readable}
  */
-Node_stream.ReadableStream = function() {};
+function Node_ReadableStream() {};
 
 /**
  * @type {boolean}
  */
-Node_stream.ReadableStream.prototype.readable;
+Node_ReadableStream.prototype.readable;
 
 /**
  * @param {string=} encoding
  */
-Node_stream.ReadableStream.prototype.setEncoding = function(encoding) {};
+Node_ReadableStream.prototype.setEncoding = function(encoding) {};
 
 /**
  */
-Node_stream.ReadableStream.prototype.destroy = function() {};
+Node_ReadableStream.prototype.destroy = function() {};
+
+/** @type {function(new:Node_WritableStream)} */
+Node_stream.WritableStream;
 
 /**
- * @interface
- * @extends Node_stream.Writable
+ * @constructor
+ * @extends {Node_Writable}
  */
-Node_stream.WritableStream = function() {};
+function Node_WritableStream() {};
 
 /**
  */
-Node_stream.WritableStream.prototype.drain = function() {};
+Node_WritableStream.prototype.drain = function() {};
 
 /**
  * @type {boolean}
  */
-Node_stream.WritableStream.prototype.writable;
+Node_WritableStream.prototype.writable;
 
 /**
- * @param {string|Node_buffer.Buffer} buffer
+ * @param {string|Node_Buffer} buffer
  * @param {string=} encoding
  */
-Node_stream.WritableStream.prototype.write = function(buffer, encoding) {};
+Node_WritableStream.prototype.write = function(buffer, encoding) {};
 
 /**
- * @param {string|Node_buffer.Buffer=} buffer
+ * @param {string|Node_Buffer=} buffer
  * @param {string=} encoding
  * @param {function(*=)=} cb
  */
-Node_stream.WritableStream.prototype.end = function(buffer, encoding, cb) {};
+Node_WritableStream.prototype.end = function(buffer, encoding, cb) {};
 
 /**
  */
-Node_stream.WritableStream.prototype.destroy = function() {};
+Node_WritableStream.prototype.destroy = function() {};
 
 /**
  */
-Node_stream.WritableStream.prototype.destroySoon = function() {};
+Node_WritableStream.prototype.destroySoon = function() {};
 
 // Undocumented
 
+/** @type {function(new:Node_Readable, Object=)} */
+Node_stream.Readable;
+
 /**
- * @interface
+ * @constructor
  * @param {Object=} options
- * @extends Node_stream.Stream
+ * @extends {Node_Stream}
  */
-Node_stream.Readable = function(options) {};
+function Node_Readable(options) {};
 
 /**
  * @type {boolean}
  * @deprecated
  */
-Node_stream.Readable.prototype.readable;
+Node_Readable.prototype.readable;
 
 /**
  * @protected
- * @param {string|Node_buffer.Buffer|null} chunk
+ * @param {string|Node_Buffer|null} chunk
  * @return {boolean}
  */
-Node_stream.Readable.prototype.push = function(chunk) {};
+Node_Readable.prototype.push = function(chunk) {};
 
 /**
- * @param {string|Node_buffer.Buffer|null} chunk
+ * @param {string|Node_Buffer|null} chunk
  * @return {boolean}
  */
-Node_stream.Readable.prototype.unshift = function(chunk) {};
+Node_Readable.prototype.unshift = function(chunk) {};
 
 /**
  * @param {string} enc
  */
-Node_stream.Readable.prototype.setEncoding = function(enc) {};
+Node_Readable.prototype.setEncoding = function(enc) {};
 
 /**
  * @param {number=} n
- * @return {Node_buffer.Buffer|string|null}
+ * @return {Node_Buffer|string|null}
  */
-Node_stream.Readable.prototype.read = function(n) {};
+Node_Readable.prototype.read = function(n) {};
 
 /**
  * @protected
  * @param {number} n
  */
-Node_stream.Readable.prototype._read = function(n) {};
+Node_Readable.prototype._read = function(n) {};
 
 /**
- * @param {Node_stream.Writable=} dest
- * @return {Node_stream.Readable}
+ * @param {Node_Writable=} dest
+ * @return {Node_Readable}
  */
-Node_stream.Readable.prototype.unpipe = function(dest) {};
-
-/**
- */
-Node_stream.Readable.prototype.resume = function() {};
+Node_Readable.prototype.unpipe = function(dest) {};
 
 /**
  */
-Node_stream.Readable.prototype.pause = function() {};
+Node_Readable.prototype.resume = function() {};
 
 /**
- * @param {Node_stream.Stream} stream
- * @return {Node_stream.Readable}
  */
-Node_stream.Readable.prototype.wrap = function(stream) {};
+Node_Readable.prototype.pause = function() {};
 
 /**
- * @interface
+ * @param {Node_Stream} stream
+ * @return {Node_Readable}
+ */
+Node_Readable.prototype.wrap = function(stream) {};
+
+/** @type {function(new:Node_Writable, Object=)} */
+Node_stream.Writable;
+
+/**
+ * @constructor
  * @param {Object=} options
- * @extends Node_stream.Stream
+ * @extends {Node_Stream}
  */
-Node_stream.Writable = function(options) {};
+function Node_Writable(options) {};
 
 /**
  * @deprecated
  * @type {boolean}
  */
-Node_stream.Writable.prototype.writable;
+Node_Writable.prototype.writable;
 
 /**
- * @param {string|Node_buffer.Buffer} chunk
+ * @param {string|Node_Buffer} chunk
  * @param {string=} encoding
  * @param {function(*=)=} cb
  * @return {boolean}
  */
-Node_stream.Writable.prototype.write = function(chunk, encoding, cb) {};
+Node_Writable.prototype.write = function(chunk, encoding, cb) {};
 
 /**
  * @protected
- * @param {string|Node_buffer.Buffer} chunk
+ * @param {string|Node_Buffer} chunk
  * @param {string} encoding
  * @param {function(*=)} cb
  */
-Node_stream.Writable.prototype._write = function(chunk, encoding, cb) {};
+Node_Writable.prototype._write = function(chunk, encoding, cb) {};
 
 /**
- * @param {string|Node_buffer.Buffer=} chunk
+ * @param {string|Node_Buffer=} chunk
  * @param {string=} encoding
  * @param {function(*=)=} cb
  */
-Node_stream.Writable.prototype.end = function(chunk, encoding, cb) {};
+Node_Writable.prototype.end = function(chunk, encoding, cb) {};
+
+/** @type {function(new:Node_Duplex, Object=)} */
+Node_stream.Duplex;
 
 /**
- * @interface
+ * @constructor
  * @param {Object=} options
- * @extends Node_stream.Readable
- * Xextends Node_stream.Writable
+ * @extends {Node_Readable}
+ * Xextends {Node_Writable}
  */
-Node_stream.Duplex = function(options) {};
+function Node_Duplex(options) {};
 
 /**
  * @type {boolean}
  */
-Node_stream.Duplex.prototype.allowHalfOpen;
+Node_Duplex.prototype.allowHalfOpen;
 
+/** @type {function(new:Node_Transform, Object=)} */
+Node_stream.Transform;
 
 /**
  * @param {Object=} options
- * @interface
- * @extends Node_stream.Duplex
+ * @constructor
+ * @extends {Node_Duplex}
  */
-Node_stream.Transform = function(options) {};
+function Node_Transform(options) {};
 
 /**
  * @protected
- * @param {string|Node_buffer.Buffer} chunk
+ * @param {string|Node_Buffer} chunk
  * @param {string} encoding
  * @param {function(*=)} cb
  */
-Node_stream.Transform._transform = function(chunk, encoding, cb) {};
+Node_Transform._transform = function(chunk, encoding, cb) {};
 
 /**
  * @protected
  * @param {function(*=)} cb
  */
-Node_stream.Transform._flush = function(cb) {};
+Node_Transform._flush = function(cb) {};
+
+/** @type {function(new:Node_PassThrough, Object=)} */
+Node_stream.PassThrough;
 
 /**
  * @param {Object=} options
- * @interface
- * @extends Node_stream.Transform
+ * @constructor
+ * @extends {Node_Transform}
  */
-Node_stream.PassThrough = function(options) {};
+function Node_PassThrough(options) {};

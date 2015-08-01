@@ -29,23 +29,26 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @constructor
  */
-var repl = {};
+function Node_repl(){};
 
 /**
- * @param {{prompt: ?string, input: ?stream.Readable, output: ?stream.Writable, terminal: ?boolean, eval: ?function(string), useColors: ?boolean, useGlobal: ?boolean, ignoreUndefined: ?boolean, writer: ?function(string)}} options
- * @return {repl.REPLServer}
+ * @param {{prompt: ?string, input: ?Node_Readable, output: ?Node_Writable, terminal: ?boolean, eval: ?function(string), useColors: ?boolean, useGlobal: ?boolean, ignoreUndefined: ?boolean, writer: ?function(string)}} options
+ * @return {Node_repl_REPLServer}
  */
-repl.start = function(options) {};
+Node_repl.prototype.start = function(options) {};
+
+/** @type {function(new:Node_repl_REPLServer)} */
+Node_repl.prototype.REPLServer;
 
 /**
  * @constructor
- * @extends events.EventEmitter
+ * @extends {Node_EventEmitter}
  */
-repl.REPLServer = function() {};
+function Node_repl_REPLServer() {};
 
 /**
  * @type {Object.<string,*>}
  */
-repl.REPLServer.prototype.context;
+Node_repl_REPLServer.prototype.context;

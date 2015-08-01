@@ -29,212 +29,140 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @constructor
  */
-var dns = {};
+function Node_dns(){};
 
 /**
  * @param {string} domain
  * @param {string|function(Error,string,string)} family
  * @param {function(?Error,string,string)=} callback
  */
-dns.lookup = function(domain, family, callback) {};
+Node_dns.prototype.lookup = function(domain, family, callback) {};
 
 /**
  * @param {string} domain
  * @param {string|function(?Error,Array)} rrtype
  * @param {function(?Error,Array)=}callback
  */
-dns.resolve = function(domain, rrtype, callback) {};
+Node_dns.prototype.resolve = function(domain, rrtype, callback) {};
 
 /**
  * @param {string} domain
  * @param {function(?Error,Array)}callback
  */
-dns.resolve4 = function(domain, callback) {};
+Node_dns.prototype.resolve4 = function(domain, callback) {};
 
 /**
  * @param {string} domain
  * @param {function(?Error,Array)}callback
  */
-dns.resolve6 = function(domain, callback) {};
+Node_dns.prototype.resolve6 = function(domain, callback) {};
 
 /**
  * @param {string} domain
  * @param {function(?Error,Array)}callback
  */
-dns.resolveMx = function(domain, callback) {};
+Node_dns.prototype.resolveMx = function(domain, callback) {};
 
 /**
  * @param {string} domain
  * @param {function(?Error,Array)}callback
  */
-dns.resolveTxt = function(domain, callback) {};
+Node_dns.prototype.resolveTxt = function(domain, callback) {};
 
 /**
  * @param {string} domain
  * @param {function(?Error,Array)}callback
  */
-dns.resolveSrv = function(domain, callback) {};
+Node_dns.prototype.resolveSrv = function(domain, callback) {};
 
 /**
  * @param {string} domain
  * @param {function(?Error,Array)}callback
  */
-dns.resolveNs = function(domain, callback) {};
+Node_dns.prototype.resolveNs = function(domain, callback) {};
 
 /**
  * @param {string} domain
  * @param {function(?Error,Array)}callback
  */
-dns.resolveCname = function(domain, callback) {};
+Node_dns.prototype.resolveCname = function(domain, callback) {};
 
 /**
  * @param {string} ip
  * @param {function(?Error,Array)}callback
  */
-dns.reverse = function(ip, callback) {};
+Node_dns.prototype.reverse = function(ip, callback) {};
 
-/**
- * @type {string}
- * @const
- */
-dns.NODATA = 'ENODATA';
+/** @const {string} */
+Node_dns.prototype.NODATA = 'ENODATA';
 
-/**
- * @type {string}
- * @const
- */
-dns.FORMERR = 'EFORMERR';
+/** @const {string} */
+Node_dns.prototype.FORMERR = 'EFORMERR';
 
-/**
- * @type {string}
- * @const
- */
-dns.SERVFAIL = 'ESERVFAIL';
+/** @const {string} */
+Node_dns.prototype.SERVFAIL = 'ESERVFAIL';
 
-/**
- * @type {string}
- * @const
- */
-dns.NOTFOUND = 'ENOTFOUND';
+/** @const {string} */
+Node_dns.prototype.NOTFOUND = 'ENOTFOUND';
 
-/**
- * @type {string}
- * @const
- */
-dns.NOTIMP = 'ENOTIMP';
+/** @const {string} */
+Node_dns.prototype.NOTIMP = 'ENOTIMP';
 
-/**
- * @type {string}
- * @const
- */
-dns.REFUSED = 'EREFUSED';
+/** @const {string} */
+Node_dns.prototype.REFUSED = 'EREFUSED';
 
-/**
- * @type {string}
- * @const
- */
-dns.BADQUERY = 'EBADQUERY';
+/** @const {string} */
+Node_dns.prototype.BADQUERY = 'EBADQUERY';
 
-/**
- * @type {string}
- * @const
- */
-dns.BADNAME = 'EBADNAME';
+/** @const {string} */
+Node_dns.prototype.BADNAME = 'EBADNAME';
 
-/**
- * @type {string}
- * @const
- */
-dns.BADFAMILY = 'EBADFAMILY';
+/** @const {string} */
+Node_dns.prototype.BADFAMILY = 'EBADFAMILY';
 
-/**
- * @type {string}
- * @const
- */
-dns.BADRESP = 'EBADRESP';
+/** @const {string} */
+Node_dns.prototype.BADRESP = 'EBADRESP';
 
-/**
- * @type {string}
- * @const
- */
-dns.CONNREFUSED = 'ECONNREFUSED';
+/** @const {string} */
+Node_dns.prototype.CONNREFUSED = 'ECONNREFUSED';
 
-/**
- * @type {string}
- * @const
- */
-dns.TIMEOUT = 'ETIMEOUT';
+/** @const {string} */
+Node_dns.prototype.TIMEOUT = 'ETIMEOUT';
 
-/**
- * @type {string}
- * @const
- */
-dns.EOF = 'EOF';
+/** @const {string} */
+Node_dns.prototype.EOF = 'EOF';
 
-/**
- * @type {string}
- * @const
- */
-dns.FILE = 'EFILE';
+/** @const {string} */
+Node_dns.prototype.FILE = 'EFILE';
 
-/**
- * @type {string}
- * @const
- */
-dns.NOMEM = 'ENOMEM';
+/** @const {string} */
+Node_dns.prototype.NOMEM = 'ENOMEM';
 
-/**
- * @type {string}
- * @const
- */
-dns.DESTRUCTION = 'EDESTRUCTION';
+/** @const {string} */
+Node_dns.prototype.DESTRUCTION = 'EDESTRUCTION';
 
-/**
- * @type {string}
- * @const
- */
-dns.BADSTR = 'EBADSTR';
+/** @const {string} */
+Node_dns.prototype.BADSTR = 'EBADSTR';
 
-/**
- * @type {string}
- * @const
- */
-dns.BADFLAGS = 'EBADFLAGS';
+/** @const {string} */
+Node_dns.prototype.BADFLAGS = 'EBADFLAGS';
 
-/**
- * @type {string}
- * @const
- */
-dns.NONAME = 'ENONAME';
+/** @const {string} */
+Node_dns.prototype.NONAME = 'ENONAME';
 
-/**
- * @type {string}
- * @const
- */
-dns.BADHINTS = 'EBADHINTS';
+/** @const {string} */
+Node_dns.prototype.BADHINTS = 'EBADHINTS';
 
-/**
- * @type {string}
- * @const
- */
-dns.NOTINITIALIZED = 'ENOTINITIALIZED';
+/** @const {string} */
+Node_dns.prototype.NOTINITIALIZED = 'ENOTINITIALIZED';
 
-/**
- * @type {string}
- * @const
- */
-dns.LOADIPHLPAPI = 'ELOADIPHLPAPI';
+/** @const {string} */
+Node_dns.prototype.LOADIPHLPAPI = 'ELOADIPHLPAPI';
 
-/**
- * @type {string}
- * @const
- */
-dns.ADDRGETNETWORKPARAMS = 'EADDRGETNETWORKPARAMS';
+/** @const {string} */
+Node_dns.prototype.ADDRGETNETWORKPARAMS = 'EADDRGETNETWORKPARAMS';
 
-/**
- * @type {string}
- * @const
- */
-dns.CANCELLED = 'ECANCELLED';
+/** @const {string} */
+Node_dns.prototype.CANCELLED = 'ECANCELLED';

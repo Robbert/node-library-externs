@@ -29,49 +29,49 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @constructor
  */
-var tty = {};
+function Node_tty() {};
 
 /**
  * @param {*} fd
  * @return {boolean}
  */
-tty.isatty = function(fd) {};
+Node_tty.prototype.isatty = function(fd) {};
 
 /**
  * @param {boolean} mode
  */
-tty.setRawMode = function(mode) {};
+Node_tty.prototype.setRawMode = function(mode) {};
 
 /**
  * @constructor
- * @extends net.Socket
+ * @extends {Node_Socket}
  */
-tty.ReadStream = function() {};
+Node_tty.prototype.ReadStream = function() {};
 
 /**
  * @type {boolean}
  */
-tty.ReadStream.prototype.isRaw;
+Node_tty.prototype.ReadStream.prototype.isRaw;
 
 /**
  * @param {boolean} mode
  */
-tty.ReadStream.prototype.setRawMode = function(mode) {};
+Node_tty.prototype.ReadStream.prototype.setRawMode = function(mode) {};
 
 /**
  * @constructor
- * @extends net.Socket
+ * @extends {Node_Socket}
  */
-tty.WriteStream = function() {};
+Node_tty.prototype.WriteStream = function() {};
 
 /**
  * @type {number}
  */
-tty.WriteStream.prototype.columns;
+Node_tty.prototype.WriteStream.prototype.columns;
 
 /**
  * @type {number}
  */
-tty.WriteStream.prototype.rows;
+Node_tty.prototype.WriteStream.prototype.rows;

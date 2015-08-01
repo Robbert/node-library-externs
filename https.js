@@ -27,56 +27,62 @@ var https = require('https');
 END_NODE_INCLUDE
  */
 
-var https = {};
+/**
+ * @constructor
+ */
+function Node_https(){};
 
 /**
  * @constructor
- * @extends tls.Server
+ * @extends {Node_tls_Server}
  */
-https.Server = function() {};
+Node_https.prototype.Server = function() {};
 
 /**
  * @param {...*} var_args
  */
-https.Server.prototype.listen = function(var_args) {};
+Node_https.prototype.Server.prototype.listen = function(var_args) {};
 
 /**
  * @param {function()=} callback
  */
-https.Server.prototype.close = function(callback) {};
+Node_https.prototype.Server.prototype.close = function(callback) {};
 
 /**
- * @param {tls.CreateOptions} options
- * @param {function(http.IncomingMessage, http.ServerResponse)=} requestListener
+ * @param {Node_tls.CreateOptions} options
+ * @param {function(Node_http_IncomingMessage, Node_http_ServerResponse)=} requestListener
  */
-https.createServer = function(options, requestListener) {};
+Node_https.prototype.createServer = function(options, requestListener) {};
 
 /**
- * @typedef {{host: ?string, hostname: ?string, port: ?number, method: ?string, path: ?string, headers: ?Object.<string,string>, auth: ?string, agent: ?(https.Agent|boolean), pfx: ?(string|buffer.Buffer), key: ?(string|buffer.Buffer), passphrase: ?string, cert: ?(string|buffer.Buffer), ca: ?Array.<string>, ciphers: ?string, rejectUnauthorized: ?boolean}}
+ * @typedef {{host: ?string, hostname: ?string, port: ?number, method: ?string, path: ?string, headers: ?Object.<string,string>, auth: ?string, agent: ?(Node_https_Agent|boolean), pfx: ?(string|Node_Buffer), key: ?(string|Node_Buffer), passphrase: ?string, cert: ?(string|Node_Buffer), ca: ?Array.<string>, ciphers: ?string, rejectUnauthorized: ?boolean}}
  */
-https.ConnectOptions;
+Node_https.ConnectOptions;
 
 /**
- * @param {https.ConnectOptions|string} options
- * @param {function(http.IncomingMessage)} callback
- * @return {http.ClientRequest}
+ * @param {Node_https.ConnectOptions|string} options
+ * @param {function(Node_http_IncomingMessage)} callback
+ * @return {Node_http_ClientRequest}
  */
-https.request = function(options, callback) {};
+Node_https.prototype.request = function(options, callback) {};
 
 /**
- * @param {https.ConnectOptions|string} options
- * @param {function(http.IncomingMessage)} callback
- * @return {http.ClientRequest}
+ * @param {Node_https.ConnectOptions|string} options
+ * @param {function(Node_http_IncomingMessage)} callback
+ * @return {Node_http_ClientRequest}
  */
-https.get = function(options, callback) {};
+Node_https.prototype.get = function(options, callback) {};
+
+/** @type {function(new:Node_https_Agent)} */
+Node_https.prototype.Agent;
 
 /**
  * @constructor
- * @extends http.Agent
+ * @extends {Node_http_Agent}
  */
-https.Agent = function() {};
+function Node_https_Agent() {};
 
 /**
- * @type {https.Agent}
+ * @type {Node_https_Agent}
  */
-https.globalAgent;
+Node_https.prototype.globalAgent;

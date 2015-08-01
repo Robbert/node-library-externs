@@ -25,8 +25,8 @@
 var process;
 
 /**
- * @interface
- * @extends {Node_events.EventEmitter}
+ * @constructor
+ * @extends {Node_EventEmitter}
  */
 function Node_process()
 {
@@ -34,17 +34,17 @@ function Node_process()
 }
 
 /**
- * @type {Node_stream.ReadableStream}
+ * @type {Node_ReadableStream}
  */
 Node_process.prototype.stdin;
 
 /**
- * @type {Node_stream.WritableStream}
+ * @type {Node_WritableStream}
  */
 Node_process.prototype.stdout;
 
 /**
- * @type {Node_stream.WritableStream}
+ * @type {Node_WritableStream}
  */
 Node_process.prototype.stderr;
 

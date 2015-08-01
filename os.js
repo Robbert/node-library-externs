@@ -28,7 +28,7 @@
  */
 
 /**
- * @interface
+ * @constructor
  */
 function Node_os()
 {

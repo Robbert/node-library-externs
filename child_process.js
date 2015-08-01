@@ -29,86 +29,89 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @constructor
  */
-var child_process = {};
+function Node_child_process(){}
+
+/** @type {function(new:Node_ChildProcess)} */
+Node_child_process.prototype.ChildProcess;
 
 /**
  * @constructor
  * @param {...*} var_args
- * @extends events.EventEmitter
+ * @extends {Node_EventEmitter}
  */
-child_process.ChildProcess = function(var_args) {}; // Private?
+function Node_ChildProcess(var_args) {}; // Private?
 
 /**
- * @type {stream.ReadableStream}
+ * @type {Node_ReadableStream}
  */
-child_process.ChildProcess.prototype.stdin;
+Node_ChildProcess.prototype.stdin;
 
 /**
- * @type {stream.WritableStream}
+ * @type {Node_WritableStream}
  */
-child_process.ChildProcess.prototype.stdout;
+Node_ChildProcess.prototype.stdout;
 
 /**
- * @type {stream.WritableStream}
+ * @type {Node_WritableStream}
  */
-child_process.ChildProcess.prototype.stderr;
+Node_ChildProcess.prototype.stderr;
 
 /**
  * @type {number}
  */
-child_process.ChildProcess.prototype.pid;
+Node_ChildProcess.prototype.pid;
 
 /**
  * @param {string=} signal
  */
-child_process.ChildProcess.prototype.kill = function(signal) {};
+Node_ChildProcess.prototype.kill = function(signal) {};
 
 /**
  * @param {Object.<string,*>} message
  * @param {*} sendHandle
  */
-child_process.ChildProcess.prototype.send = function(message, sendHandle) {};
+Node_ChildProcess.prototype.send = function(message, sendHandle) {};
 
 /**
  */
-child_process.ChildProcess.prototype.disconnect = function() {};
+Node_ChildProcess.prototype.disconnect = function() {};
 
 /**
  * @typedef {{cwd: string, stdio: (Array|string), customFds: Array, env: Object.<string,*>, detached: boolean, uid: number, gid: number, encoding: string, timeout: number, maxBuffer: number, killSignal: string}}
  */
-child_process.Options;
+Node_child_process.Options;
 
 /**
  * @param {string} command
  * @param {Array.<string>=} args
- * @param {child_process.Options=} options
- * @return {child_process.ChildProcess}
+ * @param {Node_child_process.Options=} options
+ * @return {Node_ChildProcess}
  */
-child_process.ChildProcess.spawn = function(command, args, options) {};
+Node_child_process.prototype.ChildProcess.spawn = function(command, args, options) {};
 
 /**
  * @param {string} command
- * @param {child_process.Options|function(Error, buffer.Buffer, buffer.Buffer)=} options
- * @param {function(Error, buffer.Buffer, buffer.Buffer)=} callback
- * @return {child_process.ChildProcess}
+ * @param {Node_child_process.Options|function(Error, Node_Buffer, Node_Buffer)=} options
+ * @param {function(Error, Node_Buffer, Node_Buffer)=} callback
+ * @return {Node_ChildProcess}
  */
-child_process.exec = function(command, options, callback) {};
+Node_child_process.prototype.exec = function(command, options, callback) {};
 
 /**
  * @param {string} file
  * @param {Array.<string>} args
- * @param {child_process.Options} options
- * @param {function(Error, buffer.Buffer, buffer.Buffer)} callback
- * @return {child_process.ChildProcess}
+ * @param {Node_child_process.Options} options
+ * @param {function(Error, Node_Buffer, Node_Buffer)} callback
+ * @return {Node_ChildProcess}
  */
-child_process.execFile = function(file, args, options, callback) {};
+Node_child_process.prototype.execFile = function(file, args, options, callback) {};
 
 /**
  * @param {string} modulePath
  * @param {Array.<string>=} args
- * @param {child_process.Options=} options
- * @return {child_process.ChildProcess}
+ * @param {Node_child_process.Options=} options
+ * @return {Node_ChildProcess}
  */
-child_process.fork = function(modulePath, args, options) {};
+Node_child_process.prototype.fork = function(modulePath, args, options) {};

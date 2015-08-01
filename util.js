@@ -29,9 +29,9 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @constructor
  */
-var util = {};
+function Node_util(){};
 
 /**
  * @param {string} format
@@ -39,32 +39,32 @@ var util = {};
  * @return {string}
  * @nosideeffects
  */
-util.format = function(format, var_args) {};
+Node_util.prototype.format = function(format, var_args) {};
 
 /**
  * @param {string} string
  */
-util.debug = function(string) {};
+Node_util.prototype.debug = function(string) {};
 
 /**
  * @param {...*} var_args
  */
-util.error = function(var_args) {};
+Node_util.prototype.error = function(var_args) {};
 
 /**
  * @param {...*} var_args
  */
-util.puts = function(var_args) {};
+Node_util.prototype.puts = function(var_args) {};
 
 /**
  * @param {...*} var_args
  */
-util.print = function(var_args) {};
+Node_util.prototype.print = function(var_args) {};
 
 /**
  * @param {string} string
  */
-util.log = function(string) {};
+Node_util.prototype.log = function(string) {};
 
 /**
  * @param {*} object
@@ -75,46 +75,46 @@ util.log = function(string) {};
  * @return {string}
  * @nosideeffects
  */
-util.inspect;
+Node_util.prototype.inspect;
 
 /**
  * @param {*} object
  * @return {boolean}
  * @nosideeffects
  */
-util.isArray = function(object) {};
+Node_util.prototype.isArray = function(object) {};
 
 /**
  * @param {*} object
  * @return {boolean}
  * @nosideeffects
  */
-util.isRegExp = function(object) {};
+Node_util.prototype.isRegExp = function(object) {};
 
 /**
  * @param {*} object
  * @return {boolean}
  * @nosideeffects
  */
-util.isDate = function(object) {};
+Node_util.prototype.isDate = function(object) {};
 
 /**
  * @param {*} object
  * @return {boolean}
  * @nosideeffects
  */
-util.isError = function(object) {};
+Node_util.prototype.isError = function(object) {};
 
 /**
- * @param {stream.ReadableStream} readableStream
- * @param {stream.WritableStream} writableStream
+ * @param {Node_ReadableStream} readableStream
+ * @param {Node_WritableStream} writableStream
  * @param {function(...)=} callback
  * @deprecated
  */
-util.pump = function(readableStream, writableStream, callback) {};
+Node_util.prototype.pump = function(readableStream, writableStream, callback) {};
 
 /**
  * @param {Function} constructor
  * @param {Function} superConstructor
  */
-util.inherits = function(constructor, superConstructor) {};
+Node_util.prototype.inherits = function(constructor, superConstructor) {};

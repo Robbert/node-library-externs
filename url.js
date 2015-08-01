@@ -29,30 +29,30 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @constructor
  */
-var url = {};
+function Node_url(){};
 
 /**
  * @typedef {{href: ?string, protocol: ?string, host: ?string, auth: ?string, hostname: ?string, port: ?string, pathname: ?string, search: ?string, path: ?string, query: ?string, hash: ?string}}
  */
-url.URL;
+Node_url.URL;
 
 /**
  * @param {string} urlStr
  * @param {boolean=} parseQueryString
  * @param {boolean=} slashesDenoteHost
- * @return {url.URL}
+ * @return {Node_url.URL}
  * @nosideeffects
  */
-url.parse = function(urlStr, parseQueryString, slashesDenoteHost) {};
+Node_url.prototype.parse = function(urlStr, parseQueryString, slashesDenoteHost) {};
 
 /**
- * @param {url.URL} urlObj
+ * @param {Node_url.URL} urlObj
  * @return {string}
  * @nosideeffects
  */
-url.format = function(urlObj) {};
+Node_url.prototype.format = function(urlObj) {};
 
 /**
  * @param {string} from
@@ -60,4 +60,4 @@ url.format = function(urlObj) {};
  * @return {string}
  * @nosideeffects
  */
-url.resolve = function(from, to) {};
+Node_url.prototype.resolve = function(from, to) {};

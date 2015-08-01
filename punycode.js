@@ -29,52 +29,52 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @constructor
  */
-var punycode = {};
+function Node_punycode() {};
 
 /**
  * @param {string} string
  * @return {string}
  */
-punycode.decode = function(string) {};
+Node_punycode.prototype.decode = function(string) {};
 
 /**
  * @param {string} string
  * @return {string}
  */
-punycode.encode = function(string) {};
+Node_punycode.prototype.encode = function(string) {};
 
 /**
  * @param {string} domain
  * @return {string}
  */
-punycode.toUnicode = function(domain) {};
+Node_punycode.prototype.toUnicode = function(domain) {};
 
 /**
  * @param {string} domain
  * @return {string}
  */
-punycode.toASCII = function(domain) {};
+Node_punycode.prototype.toASCII = function(domain) {};
 
 /**
  * @type {Object.<string,*>}
  */
-punycode.ucs2 = {};
+Node_punycode.prototype.ucs2 = {};
 
 /**
  * @param {string} string
  * @return {Array.<number>}
  */
-punycode.ucs2.decode = function(string) {};
+Node_punycode.prototype.ucs2.decode = function(string) {};
 
 /**
  * @param {Array.<number>} codePoints
  * @return {string}
  */
-punycode.ucs2.encode = function(codePoints) {};
+Node_punycode.prototype.ucs2.encode = function(codePoints) {};
 
 /**
  * @type {string}
  */
-punycode.version;
+Node_punycode.prototype.version;

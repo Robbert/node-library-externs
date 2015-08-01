@@ -29,7 +29,7 @@
  */
 
 /**
- * @interface
+ * @constructor
  */
 function Node_vm()
 {
@@ -64,7 +64,7 @@ Node_vm.prototype.runInContext = function(code, context, filename) {};
 Node_vm.prototype.createContext = function(initSandbox) {};
 
 /**
- * @interface
+ * @constructor
  */
 Node_vm.prototype.Script = function() {};
 
@@ -87,6 +87,6 @@ Node_vm.prototype.Script.prototype.runInNewContext = function(sandbox) {};
 
 
 /**
- * @interface
+ * @constructor
  */
 function Node_vm_Context() {}; // Does not really exist

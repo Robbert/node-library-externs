@@ -28,23 +28,23 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @constructor
  */
-var path = {};
+function Node_path(){};
 
 /**
  * @param {string} p
  * @return {string}
  * @nosideeffects
  */
-path.normalize = function(p) {};
+Node_path.prototype.normalize = function(p) {};
 
 /**
  * @param {...string} var_args
  * @return {string}
  * @nosideeffects
  */
-path.join = function(var_args) {};
+Node_path.prototype.join = function(var_args) {};
 
 /**
  * @param {string} from
@@ -52,7 +52,7 @@ path.join = function(var_args) {};
  * @return {string}
  * @nosideeffects
  */
-path.resolve = function(from, to) {};
+Node_path.prototype.resolve = function(from, to) {};
 
 /**
  * @param {string} from
@@ -60,14 +60,14 @@ path.resolve = function(from, to) {};
  * @return {string}
  * @nosideeffects
  */
-path.relative = function(from, to) {};
+Node_path.prototype.relative = function(from, to) {};
 
 /**
  * @param {string} p
  * @return {string}
  * @nosideeffects
  */
-path.dirname = function(p) {};
+Node_path.prototype.dirname = function(p) {};
 
 /**
  * @param {string} p
@@ -75,16 +75,16 @@ path.dirname = function(p) {};
  * @return {string}
  * @nosideeffects
  */
-path.basename = function(p, ext) {};
+Node_path.prototype.basename = function(p, ext) {};
 
 /**
  * @param {string} p
  * @return {string}
  * @nosideeffects
  */
-path.extname = function(p) {};
+Node_path.prototype.extname = function(p) {};
 
 /**
  * @type {string}
  */
-path.sep;
+Node_path.prototype.sep;

@@ -29,46 +29,52 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @constructor
  */
-var net = {};
+function Node_net(){};
 
 /**
  * @typedef {{allowHalfOpen: ?boolean}}
  */
-net.CreateOptions;
+Node_net.CreateOptions;
 
 /**
- * @param {(net.CreateOptions|function(...))=} options
+ * @param {(Node_net.CreateOptions|function(...))=} options
  * @param {function(...)=} connectionListener
- * @return {net.Server}
+ * @return {Node_Server}
  */
-net.createServer = function(options, connectionListener) {};
+Node_net.prototype.createServer = function(options, connectionListener) {};
 
 /**
  * @typedef {{port: ?number, host: ?string, localAddress: ?string, path: ?string, allowHalfOpen: ?boolean}}
  */
-net.ConnectOptions;
+Node_net.ConnectOptions;
 
 /**
- * @param {net.ConnectOptions|number|string} arg1
+ * @param {Node_net.ConnectOptions|number|string} arg1
  * @param {(function(...)|string)=} arg2
  * @param {function(...)=} arg3
  */
-net.connect = function(arg1, arg2, arg3) {};
+Node_net.prototype.connect = function(arg1, arg2, arg3) {};
 
 /**
- * @param {net.ConnectOptions|number|string} arg1
+ * @param {Node_net.ConnectOptions|number|string} arg1
  * @param {(function(...)|string)=} arg2
  * @param {function(...)=} arg3
  */
-net.createConnection = function(arg1, arg2, arg3) {};
+Node_net.prototype.createConnection = function(arg1, arg2, arg3) {};
+
+/** @type {function(new:Node_Server)} */
+Node_net.prototype.Server;
+
+/** @type {function(new:Node_Socket, Node_Socket.Options=)} */
+Node_net.prototype.Socket;
 
 /**
  * @constructor
- * @extends events.EventEmitter
+ * @extends {Node_EventEmitter}
  */
-net.Server = function() {};
+function Node_Server() {};
 
 /**
  * 
@@ -77,133 +83,137 @@ net.Server = function() {};
  * @param {(number|function(...))=} backlog
  * @param {function(...)=} callback
  */
-net.Server.prototype.listen = function(port, host, backlog, callback) {};
+Node_Server.prototype.listen = function(port, host, backlog, callback) {};
 
 /**
  * @param {function(...)=} callback
  */
-net.Server.prototype.close = function(callback) {};
+Node_Server.prototype.close = function(callback) {};
 
 /**
  * @return {{port: number, family: string, address: string}}
  */
-net.Server.prototype.address = function() {};
+Node_Server.prototype.address = function() {};
 
 /**
  * @type {number}
  */
-net.Server.prototype.maxConnectinos;
+Node_Server.prototype.maxConnectinos;
 
 /**
  * @type {number}
  */
-net.Server.prototype.connections;
+Node_Server.prototype.connections;
+
 
 /**
  * @constructor
- * @param {{fd: ?*, type: ?string, allowHalfOpen: ?boolean}=} options
- * @extends events.EventEmitter
+ * @param {Node_Socket.Options=} options
+ * @extends {Node_EventEmitter}
  */
-net.Socket = function(options) {};
+function Node_Socket(options) {};
+
+/** @typedef {{fd: ?*, type: ?string, allowHalfOpen: ?boolean}} */
+Node_Socket.Options;
 
 /**
  * @param {number|string|function(...)} port
  * @param {(string|function(...))=} host
  * @param {function(...)=} connectListener
  */
-net.Socket.prototype.connect = function(port, host, connectListener) {};
+Node_Socket.prototype.connect = function(port, host, connectListener) {};
 
 /**
  * @type {number}
  */
-net.Socket.prototype.bufferSize;
+Node_Socket.prototype.bufferSize;
 
 /**
  * @param {?string=} encoding
  */
-net.Socket.prototype.setEncoding = function(encoding) {};
+Node_Socket.prototype.setEncoding = function(encoding) {};
 
 /**
- * @param {string|buffer.Buffer} data
+ * @param {string|Node_Buffer} data
  * @param {(string|function(...))=}encoding
  * @param {function(...)=} callback
  */
-net.Socket.prototype.write = function(data, encoding, callback) {};
+Node_Socket.prototype.write = function(data, encoding, callback) {};
 
 /**
- * @param {(string|buffer.Buffer)=}data
+ * @param {(string|Node_Buffer)=}data
  * @param {string=} encoding
  */
-net.Socket.prototype.end = function(data, encoding) {};
+Node_Socket.prototype.end = function(data, encoding) {};
 
 /**
  */
-net.Socket.prototype.destroy = function() {};
+Node_Socket.prototype.destroy = function() {};
 
 /**
  */
-net.Socket.prototype.pause = function() {};
+Node_Socket.prototype.pause = function() {};
 
 /**
  */
-net.Socket.prototype.resume = function() {};
+Node_Socket.prototype.resume = function() {};
 
 /**
  * @param {number} timeout
  * @param {function(...)=} callback
  */
-net.Socket.prototype.setTimeout = function(timeout, callback) {};
+Node_Socket.prototype.setTimeout = function(timeout, callback) {};
 
 /**
  * @param {boolean=} noDelay
  */
-net.Socket.prototype.setNoDelay = function(noDelay) {};
+Node_Socket.prototype.setNoDelay = function(noDelay) {};
 
 /**
  * @param {(boolean|number)=} enable
  * @param {number=} initialDelay
  */
-net.Socket.prototype.setKeepAlive = function(enable, initialDelay) {};
+Node_Socket.prototype.setKeepAlive = function(enable, initialDelay) {};
 
 /**
  * @return {string}
  */
-net.Socket.prototype.address = function() {};
+Node_Socket.prototype.address = function() {};
 
 /**
  * @type {?string}
  */
-net.Socket.prototype.remoteAddress;
+Node_Socket.prototype.remoteAddress;
 
 /**
  * @type {?number}
  */
-net.Socket.prototype.remotePort;
+Node_Socket.prototype.remotePort;
 
 /**
  * @type {number}
  */
-net.Socket.prototype.bytesRead;
+Node_Socket.prototype.bytesRead;
 
 /**
  * @type {number}
  */
-net.Socket.prototype.bytesWritten;
+Node_Socket.prototype.bytesWritten;
 
 /**
  * @param {*} input
  * @return {number}
  */
-net.isIP = function(input) {};
+Node_net.prototype.isIP = function(input) {};
 
 /**
  * @param {*} input
  * @return {boolean}
  */
-net.isIPv4 = function(input) {};
+Node_net.prototype.isIPv4 = function(input) {};
 
 /**
  * @param {*} input
  * @return {boolean}
  */
-net.isIPv6 = function(input) {};
+Node_net.prototype.isIPv6 = function(input) {};

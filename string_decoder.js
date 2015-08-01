@@ -29,13 +29,13 @@
  */
 
 /**
- * @param {string} encoding
  * @constructor
+ * @param {string} encoding
  */
-var StringDecoder = function(encoding) {};
+function StringDecoder(encoding){};
 
 /**
- * @param {buffer.Buffer} buffer
+ * @param {Node_Buffer} buffer
  * @return {string}
  */
 StringDecoder.prototype.write = function(buffer) {};
@@ -46,13 +46,20 @@ StringDecoder.prototype.write = function(buffer) {};
 StringDecoder.prototype.toString = function() {};
 
 /**
- * @param {buffer.Buffer} buffer
+ * @param {Node_Buffer} buffer
  * @return {number}
  */
 StringDecoder.prototype.detectIncompleteChar = function(buffer) {};
 
 /**
- * @param {buffer.Buffer} buffer
+ * @param {Node_Buffer} buffer
  * @return {string}
  */
 StringDecoder.prototype.end = function(buffer) {};
+
+/**
+ * @constructor
+ */
+function Node_string_decoder(){};
+
+Node_string_decoder.prototype.StringDecoder = StringDecoder;

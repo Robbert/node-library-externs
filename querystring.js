@@ -29,9 +29,9 @@
  */
 
 /**
- * @type {Object.<string,*>}
+ * @constructor
  */
-var querystring = {};
+function Node_querystring(){};
 
 /**
  * @param {Object.<string,*>} obj
@@ -40,7 +40,7 @@ var querystring = {};
  * @return {string}
  * @nosideeffects
  */
-querystring.stringify = function(obj, sep, eq) {};
+Node_querystring.prototype.stringify = function(obj, sep, eq) {};
 
 /**
  * @param {string} str
@@ -49,22 +49,22 @@ querystring.stringify = function(obj, sep, eq) {};
  * @param {*=} options
  * @nosideeffects
  */
-querystring.parse = function(str, sep, eq, options) {};
+Node_querystring.prototype.parse = function(str, sep, eq, options) {};
 
 /**
  * @param {string} str
  * @return {string}
  */
-querystring.escape = function(str) {};
+Node_querystring.prototype.escape = function(str) {};
 
 /**
  * @param {string} str
  * @return {string}
  */
-querystring.unescape = function(str) {};
+Node_querystring.prototype.unescape = function(str) {};
 
 /**
- * @param {buffer.Buffer} s
+ * @param {Node_Buffer} s
  * @param {boolean} decodeSpaces
  */
-querystring.unescapeBuffer = function(s, decodeSpaces) {};
+Node_querystring.prototype.unescapeBuffer = function(s, decodeSpaces) {};

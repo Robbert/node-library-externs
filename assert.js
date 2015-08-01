@@ -29,87 +29,88 @@
  */
 
 /**
+ * @constructor
  * @param {*} value
  * @param {string} message
- * @throws {assert.AssertionError}
+ * @throws {Node_assert.AssertionError}
  */
-var assert = function(value, message) {};
+function Node_assert(value, message) {};
 
 /**
  * @param {{message: string, actual: *, expected: *, operator: string}} options
  * @constructor
- * @extends Error
+ * @extends {Error}
  */
-assert.AssertionError = function(options) {};
+Node_assert.prototype.AssertionError = function(options) {};
 
 /**
  * @return {string}
  */
-assert.AssertionError.prototype.toString = function() {};
+Node_assert.prototype.AssertionError.prototype.toString = function() {};
 
 /**
  * @param {*} value
  * @param {string=} message
- * @throws {assert.AssertionError}
+ * @throws {Node_assert.AssertionError}
  */
-assert.ok = function(value, message) {};
+Node_assert.prototype.ok = function(value, message) {};
 
 /**
  * @param {*} actual
  * @param {*} expected
  * @param {string} message
  * @param {string} operator
- * @throws {assert.AssertionError}
+ * @throws {Node_assert.AssertionError}
  */
-assert.fail = function(actual, expected, message, operator) {};
+Node_assert.prototype.fail = function(actual, expected, message, operator) {};
 
 /**
  * @param {*} actual
  * @param {*} expected
  * @param {string} message
- * @throws {assert.AssertionError}
+ * @throws {Node_assert.AssertionError}
  */
-assert.equal = function(actual, expected, message) {};
+Node_assert.prototype.equal = function(actual, expected, message) {};
 
 /**
  * @param {*} actual
  * @param {*} expected
  * @param {string} message
- * @throws {assert.AssertionError}
+ * @throws {Node_assert.AssertionError}
  */
-assert.notEqual = function(actual, expected, message) {};
+Node_assert.prototype.notEqual = function(actual, expected, message) {};
 
 /**
  * @param {*} actual
  * @param {*} expected
  * @param {string} message
- * @throws {assert.AssertionError}
+ * @throws {Node_assert.AssertionError}
  */
-assert.deepEqual = function(actual, expected, message) {};
+Node_assert.prototype.deepEqual = function(actual, expected, message) {};
 
 /**
  * @param {*} actual
  * @param {*} expected
  * @param {string} message
- * @throws {assert.AssertionError}
+ * @throws {Node_assert.AssertionError}
  */
-assert.notDeepEqual = function(actual, expected, message) {};
+Node_assert.prototype.notDeepEqual = function(actual, expected, message) {};
 
 /**
  * @param {*} actual
  * @param {*} expected
  * @param {string} message
- * @throws {assert.AssertionError}
+ * @throws {Node_assert.AssertionError}
  */
-assert.strictEqual = function(actual, expected, message) {};
+Node_assert.prototype.strictEqual = function(actual, expected, message) {};
 
 /**
  * @param {*} actual
  * @param {*} expected
  * @param {string} message
- * @throws {assert.AssertionError}
+ * @throws {Node_assert.AssertionError}
  */
-assert.notStrictEqual = function(actual, expected, message) {};
+Node_assert.prototype.notStrictEqual = function(actual, expected, message) {};
 
 /**
  * @name assert.throws
@@ -117,7 +118,7 @@ assert.notStrictEqual = function(actual, expected, message) {};
  * @param {function()} block
  * @param {Function|RegExp|function(*)} error
  * @param {string=} message
- * @throws {assert.AssertionError}
+ * @throws {Node_assert.AssertionError}
  */
 // Error: .\assert.js:120: ERROR - Parse error. missing name after . operator
 // assert.throws = function(block, error, message) {};
@@ -126,12 +127,12 @@ assert.notStrictEqual = function(actual, expected, message) {};
  * @param {function()} block
  * @param {Function|RegExp|function(*)} error
  * @param {string=} message
- * @throws {assert.AssertionError}
+ * @throws {Node_assert.AssertionError}
  */
-assert.doesNotThrow = function(block, error, message) {};
+Node_assert.prototype.doesNotThrow = function(block, error, message) {};
 
 /**
  * @param {*} value
- * @throws {assert.AssertionError}
+ * @throws {Node_assert.AssertionError}
  */
-assert.ifError = function(value) {};
+Node_assert.prototype.ifError = function(value) {};
