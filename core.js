@@ -59,44 +59,14 @@ var __filename;
 var __dirname;
 
 /**
- * @type {Object}
+ * @type {Node_Module}
  */
-var module = {};
+var module;
 
 /**
  * @type {*}
  */
 var exports;
-
-/**
- * @type {Object.<string,*>}
- */
-module.exports;
-
-/**
- * @type {function(string)}
- */
-module.require;
-
-/**
- * @type {string}
- */
-module.filename;
-
-/**
- * @type {boolean}
- */
-module.loaded;
-
-/**
- * @type {*}
- */
-module.parent;
-
-/**
- * @type {Array}
- */
-module.children;
 
 /**
  * @type {Object.<string,*>}
