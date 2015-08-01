@@ -51,33 +51,33 @@ function Node_readline_Interface() {};
  * @param {string} prompt
  * @param {number} length
  */
-Node_readline.prototype.Interface.prototype.setPrompt = function(prompt, length) {};
+Node_readline_Interface.prototype.setPrompt = function(prompt, length) {};
 
 /**
  * @param {boolean=} preserveCursor
  */
-Node_readline.prototype.Interface.prototype.prompt = function(preserveCursor) {};
+Node_readline_Interface.prototype.prompt = function(preserveCursor) {};
 
 /**
  * @param {string} query
  * @param {function(string)} callback
  */
-Node_readline.prototype.Interface.prototype.question = function(query, callback) {};
+Node_readline_Interface.prototype.question = function(query, callback) {};
 
 /**
  */
-Node_readline.prototype.Interface.prototype.pause = function() {};
+Node_readline_Interface.prototype.pause = function() {};
 
 /**
  */
-Node_readline.prototype.Interface.prototype.resume = function() {};
+Node_readline_Interface.prototype.resume = function() {};
 
 /**
  */
-Node_readline.prototype.Interface.prototype.close = function() {};
+Node_readline_Interface.prototype.close = function() {};
 
 /**
  * @param {string} data
  * @param {Object.<string,*>=} key
  */
-Node_readline.prototype.Interface.prototype.write = function(data, key) {};
+Node_readline_Interface.prototype.write = function(data, key) {};

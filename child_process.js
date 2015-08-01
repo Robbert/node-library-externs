@@ -44,6 +44,11 @@ Node_child_process.prototype.ChildProcess;
 function Node_ChildProcess(var_args) {}; // Private?
 
 /**
+ * @typedef {{cwd: string, stdio: (Array|string), customFds: Array, env: Object.<string,*>, detached: boolean, uid: number, gid: number, encoding: string, timeout: number, maxBuffer: number, killSignal: string}}
+ */
+Node_child_process.Options;
+
+/**
  * @type {Node_ReadableStream}
  */
 Node_ChildProcess.prototype.stdin;
@@ -79,17 +84,12 @@ Node_ChildProcess.prototype.send = function(message, sendHandle) {};
 Node_ChildProcess.prototype.disconnect = function() {};
 
 /**
- * @typedef {{cwd: string, stdio: (Array|string), customFds: Array, env: Object.<string,*>, detached: boolean, uid: number, gid: number, encoding: string, timeout: number, maxBuffer: number, killSignal: string}}
- */
-Node_child_process.Options;
-
-/**
  * @param {string} command
  * @param {Array.<string>=} args
  * @param {Node_child_process.Options=} options
  * @return {Node_ChildProcess}
  */
-Node_child_process.prototype.ChildProcess.spawn = function(command, args, options) {};
+Node_ChildProcess.spawn = function(command, args, options) {};
 
 /**
  * @param {string} command

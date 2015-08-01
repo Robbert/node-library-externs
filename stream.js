@@ -51,7 +51,7 @@ function Node_Stream(options) {};
  * @param {{end: boolean}=} pipeOpts
  * @return {Node_Writable}
  */
-Node_stream.Stream.prototype.pipe = function(dest, pipeOpts) {};
+Node_Stream.prototype.pipe = function(dest, pipeOpts) {};
 
 /** @type {function (new:Node_ReadableStream)} */
 Node_stream.ReadableStream;
